@@ -1,0 +1,114 @@
+buildscript {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+
+    }
+}
+apply plugin: 'com.android.application'
+
+
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+android {
+    signingConfigs {
+        ReleaseConfig {
+            keyAlias 'paymgate_test_tool'
+            keyPassword 'ejsystem'
+            storeFile file('C:/Users/pc/Desktop/SDKAndroid.master/ejsystem.keystore')
+            storePassword 'ejsystem'
+        }
+    }
+    compileSdkVersion 28
+    compileOptions.encoding = 'UTF-8'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId "com.samilcts.mpos.test_tool"
+        minSdkVersion 15
+        targetSdkVersion 28
+
+    }
+
+    buildTypes {
+
+        debug {
+
+
+            minifyEnabled false
+        }
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.ReleaseConfig
+        }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            dimension  "default"
+            //major(1)+minor(2)+fix(2)+build(2)
+            versionCode 2040101
+            versionName '2.4.1'
+            applicationId 'com.samilcts.mpos.test_tool.dev'
+
+        }
+        product {
+            dimension  "default"
+            versionCode 2040101
+            versionName '2.4.1'
+        }
+    }
+
+    dexOptions {
+        // Sets the maximum number of DEX processes
+        // that can be started concurrently.
+        maxProcessCount 8
+        // Sets the maximum memory allocation pool size
+        // for the dex operation.
+        javaMaxHeapSize "2g"
+        // Enables Gradle to pre-dex library dependencies.
+        preDexLibraries true
+    }
+
+   // applicationVariants.all { variant ->
+    //    variant.outputs.each { output ->
+
+          //  output.outputFile = new File(
+          //          output.outputFile.parent,
+            //        output.outputFile.name.replace("app-", "MPAIO Test Tool v${variant.versionName}-"))
+
+     //   }
+  //  }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    implementation 'io.paperdb:paperdb:2.6'
+    implementation project(':mpaio_ext_dialogs')
+    implementation project(':mpaio_ext_nice')
+    implementation project(':mpaio_sdk')
+    implementation project(':util')
+    // And ProGuard rules for RxJava!
+    implementation 'com.artemzin.rxjava:proguard-rules:1.2.7.0'
+    implementation 'net.yslibrary.licenseadapter:licenseadapter:1.4.0'
+    //dialogs
+    implementation 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
+    implementation project(':dialogs')
+}

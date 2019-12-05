@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="logTypes" translatable="false">
+        <item>Bytes</item>
+        <item>Packet</item>
+        <item>Message</item>
+    </string-array>
+
+</resources>

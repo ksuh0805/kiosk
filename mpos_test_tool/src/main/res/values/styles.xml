@@ -1,0 +1,111 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar">
+
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
+
+
+        <item name="actionMenuTextAppearance">@style/TextAppearance.CTS.Widget.ActionBar.Menu</item>
+        <item name="actionBarStyle">@style/Widget.CTS.ActionBar </item>
+       <!-- <item name="actionBarSize">@dimen/actionBarSize</item>
+        <item name="android:actionBarSize">@dimen/actionBarSize</item>-->
+    <!--    <item name="toolbarStyle">@style/Widget.CTS.Toolbar</item>-->
+
+
+
+
+      <!--  &lt;!&ndash;상태바 백그라운드 등&ndash;&gt;
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+
+        &lt;!&ndash;액션바 백그라운드 등&ndash;&gt;
+        <item name="colorPrimary">@color/primary</item>
+
+
+        <item name="colorButtonNormal">@color/primary_light</item>
+
+
+        <item name="android:textColorPrimary">@color/primary_text</item>
+
+
+        &lt;!&ndash;컨트롤 활성 색 에디트 텍스트&ndash;&gt;
+        <item name="colorAccent">@color/accent</item>
+
+
+        <item name="android:buttonStyle">@style/CTS.Widget.Button</item>
+
+        <item name="android:actionBarStyle">@style/myActionbar</item>
+
+
+        <item name="android:actionMenuTextAppearance">@style/TextAppearance.MyApp.Widget.ActionBar.TestMenu</item>-->
+    </style>
+
+
+    <!--Action Bar-->
+
+    <style name="Widget.CTS.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
+
+        <item name="titleTextStyle">@style/TextAppearance.CTS.Widget.ActionBar.Title</item>
+
+    <!--    <item name="android:minHeight">@dimen/actionBarSize</item>
+        <item name="height">@dimen/actionBarSize</item>-->
+
+    </style>
+
+
+    <style name="TextAppearance.CTS.Widget.ActionBar.Title" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title">
+
+         <item name="android:textSize">20sp</item>
+    </style>
+
+
+    <!--Action Bar TestMenu-->
+    <style name="TextAppearance.CTS.Widget.ActionBar.Menu" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu">
+
+       <item name="android:textSize">14sp</item>
+        <item name="textAllCaps">false</item>-->
+    </style>
+    
+    
+    <style name="largeScrollbar">
+
+      <!--  <item name="android:scrollbarThumbVertical">@drawable/scroll</item>-->
+        <!--<item name="android:scrollbarTrackVertical">@drawable/scroll</item>-->
+     <!--   <item name="android:fastScrollThumbDrawable">@drawable/scroll</item>-->
+
+    </style>
+
+    <style name="Theme.Mpos.ConnectionDialog" parent="Theme.AppCompat.Dialog">
+
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Dialog">
+        <!-- Fill the screen -->
+    <!--    <item name="android:layout_width">@dimen/width_dialog</item>
+        <item name="android:layout_height">@dimen/height_dialog</item>-->
+           <item name="android:layout_width">match_parent</item>
+                <item name="android:layout_height">match_parent</item>
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="colorControlNormal">@color/accent</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    
+	<dimen name="send_button_text_size">12sp</dimen>
+	<dimen name="cmd_button_text_size">10sp</dimen>
+	<dimen name="button_height">50dip</dimen>
+    <dimen name="button_width">75dip</dimen>
+
+    <dimen name="button_width_big">110dip</dimen>
+    <dimen name="button_height_big">70dp</dimen>
+
+
+    <dimen name="output_card_textsize">25sp</dimen>
+
+
+    <dimen name="output_margin">3dp</dimen>
+    <dimen name="output_padding">1dp</dimen>
+
+    <dimen name="actionBarSize">20dp</dimen>
+
+</resources>

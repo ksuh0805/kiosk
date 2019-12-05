@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+	<TextView
+		android:id="@+id/tvCommandName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+
+		android:layout_centerVertical="true"
+		android:layout_toLeftOf="@+id/tvCommandCode"
+		android:text="GET_DEVICE_NAME"
+		android:textSize="@dimen/md_simplelist_textsize" />
+
+	<TextView
+		android:id="@+id/tvCommandCode"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+		android:layout_centerVertical="true"
+		android:text="0x0001"
+		android:textSize="@dimen/md_listitem_textsize" />
+
+</RelativeLayout>

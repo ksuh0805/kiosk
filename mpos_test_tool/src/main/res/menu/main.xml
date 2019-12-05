@@ -1,0 +1,39 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/action_connect"
+        android:orderInCategory="101"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_connect"
+        />
+
+    <item android:title="@string/action_clear"
+        android:id="@+id/action_clear"
+        android:orderInCategory="102"
+        app:showAsAction="ifRoom"
+
+        />
+
+    <item
+        android:id="@+id/action_stop"
+        android:orderInCategory="103"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_stop"
+        />
+
+    <item android:title="@string/action_setting"
+        android:id="@+id/action_setting"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        />
+
+    <item android:title="@string/action_license"
+        android:id="@+id/action_license"
+        android:orderInCategory="300"
+        app:showAsAction="never"
+        />
+
+</menu>

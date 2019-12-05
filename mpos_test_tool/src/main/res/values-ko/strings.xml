@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MPAIO Test Tool</string>
+    <!-- 버튼 텍스트 -->
+    <string name="stop">stop</string>
+
+
+    <string name="device_service_does_not_initialize">mpos 서비스가 초기화 되지 않았습니다.\n잠시 후에 다시 눌러주세요.</string>
+
+    <string name="not_ready"> 아직 준비되지 않았습니다. 다시 시도해주세요. </string>
+
+    <string name="error_response_timeout">응답 시간이 초과하였습니다.</string>
+
+    <string name="error_checksum">유효하지 않은 체크섬</string>
+    <string name="error_unknown">알 수 없는 에러가 발생했습니다.</string>
+    <string name="error_read_card">카드 읽기를 실패했습니다.\n다시 시도해주세요.</string>
+    <string name="error_read_barcode">바코드 읽기를 실패했습니다.</string>
+
+    <string name="response_timeout_msr">마그네틱 카드 시간초과.</string>
+    <string name="response_timeout_ic">IC 카드 시간초과.</string>
+    <string name="response_timeout_rfid">RFID 카드 시간초과.</string>
+
+    <string name="response_timeout_pinpad">PINPAD 시간초과.</string>
+    <string name="response_cancel_pinpad">PINPAD 입력 취소.</string>
+
+    <string name="action_connect">연결</string>
+    <string name="action_clear">깨끗이</string>
+    <string name="action_stop">중지</string>
+    <string name="action_disconnect">해제</string>
+    <string name="hint_set_serial">길이 : 11</string>
+    <string name="action_setting">설정</string>
+    <string name="title_btn_send_command">전송</string>
+
+    <string name="input_signature">서명해주세요.</string>
+    <string name="action_license">OSS 라이센스</string>
+
+</resources>

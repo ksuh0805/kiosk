@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_btn_scenario_start">시나리오 시작</string>
+    <string name="hint_scenario_parameter">파라미터를 스페이스로 구분하여 입력하세요. ex)a b c
+    </string>
+
+    <string name="info_scenario_pay">
+        테스트 서버와 통신합니다.\n
+        파라미터를 정확히 입력하세요. 스페이스로 구분합니다.\n
+        [인식타입] [거래타입] [할부] [봉사료] [세금] [총액]\n
+        인식 타입 : 원하는 모든 값을 더하세요. MSR(1), EMV(2), RFID(4), 바코드(8), PIN 패드(16), 전부(31) \n
+        타입 : 카드(10)/현금(21)\n
+        할부 : 카드(00~12), 현금영수증:(개인:01, 사업자:02)\n
+        봉사료, 세금, 총액 : 최대 12 자리</string>
+    <string name="info_scenario_revoke">
+        테스트 서버와 통신합니다.\n
+        파라미터를 입력하세요. 스페이스로 구분합니다.\n
+        [인식타입] [거래타입] [할부] [봉사료] [세금] [총액] [승인번호] [승인날짜] [거래번호]\n
+        인식 타입 : 원하는 모든 값을 더하세요. MSR(1), EMV(2), RFID(4), 바코드(8), PIN 패드(16), 전부(31) \n
+        거래타입 : 망상취소 (카드:10, 현금영수증:25)/강제취소(카드:30, 현금영수증:21)\n
+        할부 : 카드(00~12), 현금영수증:(개인:01, 사업자:02)\n
+        봉사료, 세금, 총액 : 최대 12 자리\n
+        승인번호 : 8~12 자리\n
+        승인날짜 : 6 자리(년,월,일)\n
+        거래번호 : 카드 (12 자리), 현금영수증(사유 : "CASH" + [1 : 취소, 2 : 오류발급, 3 : 기타] )\n"
+    </string>
+
+     <string name="info_scenario_inject_key">
+         파라미터를 입력하세요. 스페이스로 구분합니다.\n
+        [Van 아이디] [CAT 아이디] [그룹 아이디] [단말기 아이디] [DIK] [PMK] [장소 아이디] [장비 아이디] [서명기준액]\n
+        Van 아이디 : 2 자리, CAT 아이디 : 10 자리, 그룹 아이디 : 2 자리, Device ID : 5자리, DIK : 48 자리, PMK : 44 자리
+         , 장소 아이디 : 20 자리 이하, 장비 아이디 : 20 자리 이하, 서명기준액 : 가변 \n"
+     </string>
+       <string name="info_scenario_set_ip">
+           파라미터를 입력하세요. 스페이스로 구분합니다.\n
+           [NICE PGP 서버 아이피] [NICE PGP 서버 포트] [NICE SSL 서버 아이피] [NICE SSL 서버 포트]\n
+    </string>
+    <string name="info_scenario_set_crn">
+         파라미터를 입력하세요. 스페이스로 구분합니다.\n
+            [사업자번호]\n
+        사업자번호 : 10 자리
+    </string>
+
+    <string name="info_scenario_set_managing_server_info">
+          파라미터를 입력하세요. 스페이스로 구분합니다.\n
+            [서버 아이피] [서버 포트]\n
+    </string>
+
+
+    <string name="info_command_datetime">
+        파라미터를 입력하세요.\n
+         [시각] \n
+         시각 : yyyMMddHHmmss ex)20160108150905\n
+    </string>
+
+    <string name="info_command_prepaid_change">
+         파라미터를 입력하세요.\n
+          [금액] \n
+    </string>
+
+    <string name="info_command_prepaid_log">
+        파라미터를 입력하세요.\n
+          [로그 인덱스] \n
+        로그 인덱스 : 구입(0~3), 충전(4~7), 환불(8~11), 최근(12 ~ 255)\n
+    </string>
+
+ <string name="info_scenario_inject_prepaid_card_key">
+           파라미터를 입력하세요.\n
+            [기본 키] [인증 키] [장소 아이디] [단말기 아이디] [잔액 한도]\n
+            기본 키 : 16 자리, 인증 키 : 12 자리 (6 hex), 장소 아이디 : 16 자리,  단말기 아이디 : 16 자리, 잔액 한도 : 가변 \n"
+       </string>
+
+       <string name="info_scenario_set_network_info">
+        파라미터를 입력하세요. 스페이스로 구분합니다.\n
+        [AP SSID] [AP 비밀번호] [아이피] [서브넷] [게이트웨이] [DNS] [DHCP 사용여부] [타임아웃] [모듈타입]\n
+        DHCP 사용여부 : 미사용(0), 사용(1)\n
+        모듈 타입 : WIFI(1), Ethernet(2), LTE(3)\n
+     </string>
+
+      <string name="info_scenario_set_run_mode">
+        파라미터를 입력하세요.\n
+        [모드]\n
+     </string>
+
+    <string name="info_scenario_set_hardware_revision">
+    파라미터를 입력하세요. 스페이스로 구분합니다.\n
+        [주 하드웨어 리비전] [부 하드웨어1 리비전] [부 하드웨어2 리비전] [부 하드웨어3 리비전]\n
+ </string>
+
+    <string name="info_scenario_set_serial_number">
+파라미터를 입력하세요.\n
+            [시리얼 넘버]\n
+ </string>
+
+
+    <string name="info_scenario_set_update_server_info">
+파라미터를 입력하세요. 스페이스로 구분합니다.\n
+            [서버 아이피] [서버 포트]\n
+    </string>
+
+    <string name="info_scenario_set_cat_id">
+   파라미터를 입력하세요. 스페이스로 구분합니다.\n
+        [CAT 아이디] [장소 아이디] [장비 아이디] \n
+        CAT 아이디 : 10 자리, 장소 아이디 : 20 자리 이하, 장비 아이디 : 20 자리 이하\n
+    </string>
+
+    <string name="info_scenario_set_charge_factors">
+   파라미터를 입력하세요.\n
+          [세금포함여부] [봉사료] [단위금액] [요금 단계수] [기본 요금 단계] [스텝 승수]\n
+          세금포함여부 : 포함(1), 별도(0)\n
+          봉사료, 단위 금액 : 숫자\n
+          요금 단계수 : 숫자 (1~20)\n
+          기본 요금 단계 : 숫자 (0~19)\n
+          스텝 승수 : , 구분 숫자들 (1,2,5,7,10,...)\n
+    </string>
+
+    <string name="info_scenario_set_cash_in_pulse_config">
+파라미터를 입력하세요. 스페이스로 구분합니다.\n
+            [주기] [로우] [인터벌] [펄스 금액] [권종별 펄스 수]\n
+            주기, 로우, 인터벌 : ms\n
+            펄스 금액 : 500원(0), 1000원(1)\n
+            권종별 펄스 수 : 앞부터 천,오천,만 원권 펄스 수\n
+    </string>
+
+
+</resources>

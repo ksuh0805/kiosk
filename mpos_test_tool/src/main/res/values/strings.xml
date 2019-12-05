@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" >MPAIO Test Tool</string>
+
+	<string name="connection_usb" translatable="false">USB</string>
+	<string name="connection_ble" translatable="false">BLE</string>
+	<string name="connect" translatable="false">Connect</string>
+	<string name="disconnect" translatable="false">Disconnect</string>
+	<string name="clear" translatable="false">Clear</string>
+	<string name="cancel" translatable="false">Cancel</string>
+
+	<string name="barcode" translatable="false">barcode</string>
+	<string name="stop">stop</string>
+	<string name="device_service_does_not_initialize">device service does not initialize.\npress once again after a few seconds.</string>
+	<string name="device_information" translatable="false">device info.</string>
+
+	<string name="connection_state_none" translatable="false">None Connection</string>
+
+	<string name="connection_state_connecting" translatable="false">#1 Connecting…</string>
+	<string name="connection_state_connected" translatable="false">#1 Connected</string>
+	<string name="connection_state_disconnected" translatable="false">#1 Disconnected</string>
+
+	<string name="not_ready"> not ready retry later. </string>
+
+	<string name="error_response_timeout">response timeout.</string>
+	<!-- card -->
+
+	<string name="error_checksum">Invalid checksum.</string>
+	<string name="error_unknown">Unknown error occurred.</string>
+	<string name="error_read_card">Failed reading card.\nTry again.</string>
+	<string name="error_read_barcode">Failed reading barcode.</string>
+
+	<string name="response_timeout_msr">Magnetic card timeout</string>
+	<string name="response_timeout_ic">IC card timeout</string>
+	<string name="response_timeout_rfid">RFID card timeout</string>
+	<string name="response_timeout_pinpad">Pin pad timeout</string>
+	<string name="response_cancel_pinpad">Pin pad canceled</string>
+
+
+	<string name="action_connect">Connect</string>
+	<string name="action_clear">Clear</string>
+	<string name="action_stop">Stop</string>
+	<string name="action_disconnect">Disconnect</string>
+	<string name="hint_set_serial">length : 11</string>
+
+	<string name="title_btn_send_command">Send</string>
+	<string name="action_setting">Setting</string>
+
+	<string name="name_prepaid_card"  translatable="false">자체선불카드</string>
+
+	<string name="input_signature">Write your signature</string>
+	<string name="action_license">OSS License</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="company_address">(sangdaewon-dong, Woolim Lions Valley No. 805)
+        24, Dunchon-daero 388beon-gil, Jungwon-gu, Seongnam-si, Gyeonggi-do, Republic of Korea</string>
+
+    <string name="company_registration_number" translatable="false">215-81-73822</string>
+
+    <string name="company_representative">Jong-Won choi</string>
+    <string name="affiliate_name">Samil CTS Co.,LTD</string>
+    <string name="affiliate_phone" translatable="false">070-7094-9000</string>
+
+</resources>

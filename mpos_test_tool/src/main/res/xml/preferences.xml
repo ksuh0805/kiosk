@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="useAutoStopCommand"
+        android:summaryOff="don't send STOP command even if leave test view"
+        android:summaryOn="send STOP command when leave test view"
+        android:title="Use Auto STOP command" />
+
+    <com.afollestad.materialdialogs.prefs.MaterialMultiSelectListPreference
+        android:entries="@array/logTypes"
+        android:entryValues="@array/logTypes"
+        android:key="logType"
+
+        android:persistent="true"
+        android:summary="select send/recv log type byte, packet, message."
+        android:title="Select Log Type" />
+
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="useAutoReSendCommand"
+        android:summaryOff="don't repeat command test."
+        android:summaryOn="repeat command test automatically when test succeed"
+        android:title="Use repeat command test" />
+</PreferenceScreen>

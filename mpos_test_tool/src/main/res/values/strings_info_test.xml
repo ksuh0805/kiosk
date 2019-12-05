@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_btn_scenario_start">Start scenario</string>
+    <string name="hint_scenario_parameter">input parameters with spaces ex)a b c</string>
+
+    <string name="info_scenario_pay">
+        communicate with test server.\n
+        input parameters \n
+        [read type] [trade type] [installment] [serviceCharge] [tax] [totalCharge]\n
+        read type :  add all you want. MSR(1), EMV(2), RFID(4), Barcode(8), PIN Pad(16), All(31) \n
+        trade type : card(10)/cash(21)\n
+        installment : card(00~12), cash:(personal:01, business:02)\n
+        serviceCharge, tax, totalCharge : max 12 number
+    </string>
+    <string name="info_scenario_revoke">
+        communicate with test server.\n
+        input parameters with space\n
+        [read type] [trade type] [installment] [service charge] [tax] [total charge] [approval number] [approval date] [trade number]\n
+        read type :  add all you want. MSR(1), EMV(2), RFID(4), Barcode(8), PIN Pad(16), All(31) \n
+        trade type : network revoke(card:10, cash:25)/force revoke(card:30, cash:21)\n
+        installment : card(00~12), cash:(personal:01, business:02)\n
+        service charge, tax, totalCharge : max 12 number\n
+        approval number : 8~12 number\n
+        approval date : 6 number (year, month, date)\n
+        trade number : card(12 number), cash(reason : "CASH" + [ 1 : cancel, 2 : error, 3 : etc])\n
+    </string>
+
+       <string name="info_scenario_inject_key">
+           input parameters with space\n
+            [Van ID] [CAT ID] [Group ID] [Device ID] [DIK] [PMK] [Place ID] [Machine ID] [Sign Threshold]\n
+            Van ID : 2 number, CAT ID : 10 number, Group ID : 2 number,  Device ID : 5 number, DIK : 48 character, PMK : 44 character
+           , Place ID : 20 character or less, Machine ID : 20 character or less, Sign Threshold : variable \n
+
+       </string>
+    <string name="info_scenario_set_ip">    input parameters with space\n
+            [NICE PGP server IP] [NICE PGP server port] [NICE SSL server IP] [NICE SSL server port]\n
+    </string>
+
+    <string name="info_scenario_set_crn">
+         input parameters with space\n
+            [Company Registration Number]\n
+        Company Registration Number : 10 number
+    </string>
+    <string name="info_scenario_set_managing_server_info">
+         input parameters with space\n
+            [Server IP] [Server port]\n
+    </string>
+
+    <string name="info_command_datetime">
+         input parameter\n
+          [date] \n
+         date : yyyyMMddHHmmss ex)20160108150905\n
+    </string>
+
+    <string name="info_command_prepaid_change">
+         input parameter\n
+          [Amount] \n
+    </string>
+
+    <string name="info_command_prepaid_log">
+         input parameter\n
+          [Log index] \n
+        Log index : purchase(0~3), recharge(4~7), refund(8~11), recent(12 ~ 255)\n
+    </string>
+
+
+     <string name="info_scenario_inject_prepaid_card_key">
+           input parameters with space\n
+            [Default Key] [Authentication Key] [Place ID] [Terminal ID] [Balance limit]\n
+            Default Key : 16 character, Authentication Key : 12 character (6 hex), Place ID : 16 character,  Terminal ID : 16 character, Balance limit : variable \n"
+     </string>
+
+      <string name="info_scenario_set_network_info">
+           input parameters with space\n
+            [AP SSID] [AP Password] [IP] [Subnet] [Gateway] [DNS] [DHCP Enable] [Timeout] [Module Type]\n
+            DHcp Enable : Disable(0), Enable(1)\n
+            Module type : WIFI(1), Ethernet(2), LTE(3)\n
+     </string>
+
+      <string name="info_scenario_set_run_mode">
+         input parameter\n
+          [Mode]\n
+     </string>
+
+    <string name="info_scenario_set_hardware_revision">
+    input parameters with space\n
+    [Main hardware revision] [Sub hardware1 revision] [Sub hardware2 revision] [Sub hardware3 revision]\n
+ </string>
+
+    <string name="info_scenario_set_serial_number">
+   input parameter\n
+    [Serial number]\n
+    </string>
+
+
+    <string name="info_scenario_set_update_server_info">
+        input parameters with space\n
+        [Server IP] [Server port]]\n
+    </string>
+
+    <string name="info_scenario_set_cat_id">
+   input parameters with space\n
+            [CAT ID]  [Place ID] [Machine ID]\n
+            CAT ID : 10 number, Place ID : 20 character or less, Machine ID : 20 character or less\n
+    </string>
+
+    <string name="info_scenario_set_charge_factors">
+        input parameters with space\n
+          [Tax included] [Service charge] [Unit price] [Charge Step] [Default Step Index] [Step Multipliers]\n
+          Tax included : Yes(1), No(0)\m
+          Service charge, Unit price : numbers\m
+          Charge Step : numbers (1~20)\m
+          Default Step Index : numbers (0~19)\m
+          Step Multipliers : numbers (1,2,5,7,10,...)\m
+    </string>
+
+    <string name="info_scenario_set_cash_in_pulse_config">
+        input parameters with space\n
+            [Cycle] [Low time] [Interval] [Pulse value] [Pulse count per bill]\n
+            Cycle, Low time, Interval : ms\n
+            Pulse value : 500 KRW(0), 1000 KRW(1)\n
+            Pulse count per bill : 3 numbers. (1k, 5k, 10k ) krw\n
+    </string>
+
+
+</resources>

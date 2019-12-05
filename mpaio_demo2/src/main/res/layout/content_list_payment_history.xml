@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_product_list"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/installment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_alignParentTop="true"
+            android:text="01"
+            android:layout_weight="1"
+            android:textSize="@dimen/size_product_item_list_text"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/margin_left_product_name"
+            android:textColor="@android:color/white"
+            style="@style/RobotoLight" />
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/price"
+            android:layout_width="@dimen/width_total"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_above="@+id/spinner"
+            android:text="$200"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_product_item_list_total"
+            android:textColor="@android:color/white"
+            style="@style/RobotoMedium" />
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/approvalNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_alignParentTop="true"
+            android:text="01234567"
+            android:layout_weight="1"
+            android:textSize="@dimen/size_product_item_list_text"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/margin_left_product_name"
+            android:textColor="@android:color/white"
+            style="@style/RobotoLight" />
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/approvalDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_alignParentTop="true"
+            android:text="20160601"
+            android:layout_weight="1"
+            android:textSize="@dimen/size_product_item_list_text"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/margin_left_product_name"
+            android:textColor="@android:color/white"
+            style="@style/RobotoLight" />
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/tradeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_alignParentTop="true"
+            android:text="012345678912"
+            android:layout_weight="1"
+            android:textSize="@dimen/size_product_item_list_text"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_marginLeft="@dimen/margin_left_product_name"
+            android:textColor="@android:color/white"
+            style="@style/RobotoLight" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_right_product_btn">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:layout_alignBottom="@+id/spinner"
+                android:layout_toRightOf="@+id/spinner"
+                android:layout_alignTop="@+id/spinner"
+                android:background="@drawable/btn_remove"
+                android:layout_gravity="center" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/image"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_divider"
+        android:background="@color/colorWhite20" />
+
+</LinearLayout>

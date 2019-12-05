@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="lock_portrait">true</bool>
+    <integer name="product_column">1</integer>
+
+
+    <string name="sign_path" translatable="false">sign.path</string>
+    <string name="sign_path_test" translatable="false">sign.path.test</string>
+
+
+
+
+
+
+</resources>

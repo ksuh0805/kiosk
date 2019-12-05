@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dialogs/dialogs.iml" filepath="$PROJECT_DIR$/dialogs/dialogs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mPrinter/mPrinter.iml" filepath="$PROJECT_DIR$/mPrinter/mPrinter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/media/media.iml" filepath="$PROJECT_DIR$/media/media.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mpaio_demo2/mpaio_demo2.iml" filepath="$PROJECT_DIR$/mpaio_demo2/mpaio_demo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mpaio_ext_dialogs/mpaio_ext_dialogs.iml" filepath="$PROJECT_DIR$/mpaio_ext_dialogs/mpaio_ext_dialogs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mpaio_ext_nice/mpaio_ext_nice.iml" filepath="$PROJECT_DIR$/mpaio_ext_nice/mpaio_ext_nice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mpaio_sdk/mpaio_sdk.iml" filepath="$PROJECT_DIR$/mpaio_sdk/mpaio_sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mpos_test_tool/mpos_test_tool.iml" filepath="$PROJECT_DIR$/mpos_test_tool/mpos_test_tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/payapp.iml" filepath="$PROJECT_DIR$/payapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paymgate_nice_demo/paymgate_nice_demo.iml" filepath="$PROJECT_DIR$/paymgate_nice_demo/paymgate_nice_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paymgate_nice_dialog/paymgate_nice_dialog.iml" filepath="$PROJECT_DIR$/paymgate_nice_dialog/paymgate_nice_dialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paymgate_nice_interface/paymgate_nice_interface.iml" filepath="$PROJECT_DIR$/paymgate_nice_interface/paymgate_nice_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugin_paymgate_nice/plugin_paymgate_nice.iml" filepath="$PROJECT_DIR$/plugin_paymgate_nice/plugin_paymgate_nice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" />
+    </modules>
+  </component>
+</project>

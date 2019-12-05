@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    tools:context=".IntroActivity"
+    android:id="@+id/coordinatorLayout">
+
+    <android.support.percent.PercentRelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.samilcts.app.paymgate.demo.nice.mpaio2.IntroActivity">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/splash_img01"
+
+            app:layout_marginTopPercent="@fraction/margin_top_percent_logo1"
+            android:layout_centerHorizontal="true" />
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+
+            style="?android:attr/progressBarStyleLarge"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/logo2"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="true"
+            android:id="@+id/prog"
+            android:visibility="invisible"
+
+
+            android:layout_alignStart="@id/logo2"
+            android:layout_alignEnd="@id/logo2"
+
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/splash_img02"
+            android:layout_centerHorizontal="true"
+            app:layout_marginBottomPercent="@fraction/margin_bottom_percent_logo2"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/logo2"
+            />
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+

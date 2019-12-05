@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_left_product_name"
+    android:paddingRight="@dimen/margin_right_product_btn">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/tvIssuer"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_total"
+                android:layout_weight="1"
+                tools:text="삼일선불카드" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/tvReceiptType"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_total"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                tools:text="매출표" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tvType"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            android:layout_gravity="right"
+            tools:text="선불충전" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView18"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            android:layout_gravity="right"
+            android:text="@string/title_for_customer" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:background="@color/colorWhite20" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/textView19"
+
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            android:text="@string/title_membership_number" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/tvMembershipNumber"
+
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            tools:text="5433-****-****-****" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/title_issue_date"
+            android:id="@+id/textView36"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tvIssueDate"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            tools:text="2016.10.13 11:11:11" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:background="@color/colorWhite20"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

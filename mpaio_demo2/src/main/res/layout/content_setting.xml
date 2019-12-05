@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SettingsActivity"
+    android:orientation="vertical"
+
+    >
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_marginLeftPercent="@fraction/padding_left_percent_setting"
+            app:layout_marginRightPercent="@fraction/padding_right_percent_setting"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_setting_list_item"
+                android:paddingLeft="@dimen/margin_setting_list_h"
+                android:paddingRight="@dimen/margin_setting_list_h">
+
+                <com.devspark.robototextview.widget.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Printer Test"
+                    android:id="@+id/tvPrint"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/size_setting_big"
+                    android:textColor="@color/colorWhite"
+                    style="@style/RobotoLight"/>
+
+                <com.devspark.robototextview.widget.RobotoButton
+                    android:layout_width="@dimen/width_button_setting"
+                    android:layout_height="@dimen/height_button_setting"
+                    android:text="TEST"
+                    android:id="@+id/print"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btn_setting"
+                    android:textSize="@dimen/size_setting_button"
+                    style="@style/RobotoMedium"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_divider"
+                android:background="@color/colorWhite10" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_setting_list_item"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/margin_setting_list_h"
+                android:paddingLeft="@dimen/margin_setting_list_h">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true">
+
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Printer"
+                        android:id="@+id/textView17"
+                        android:textSize="@dimen/size_setting_big"
+                        android:textColor="@color/colorWhite"
+                        style="@style/RobotoLight"/>
+
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="name"
+                        android:id="@+id/tvConnectedPrinter"
+                        android:textSize="@dimen/size_setting_small"
+                        android:textColor="@color/colorWhite"
+                        style="@style/RobotoLight"/>
+                </LinearLayout>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cbState"
+                    android:checked="false"
+                    android:button="@drawable/btn_switch"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_right_printer_state" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_divider"
+                android:background="@color/colorWhite10" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_setting_list_item"
+                android:paddingLeft="@dimen/margin_setting_list_h"
+                android:paddingRight="@dimen/margin_setting_list_h">
+
+                <com.devspark.robototextview.widget.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Scan"
+                    android:id="@+id/textView"
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/size_setting_big"
+                    android:textColor="@color/colorWhite"
+
+                    style="@style/RobotoLight"/>
+
+                <com.devspark.robototextview.widget.RobotoButton
+                    android:layout_width="@dimen/width_button_setting"
+                    android:layout_height="@dimen/height_button_setting"
+                    android:text="Start"
+                    android:id="@+id/btnScan"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/btn_setting"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/size_setting_button"
+                    style="@style/RobotoMedium"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_divider"
+                android:background="@color/colorWhite10" />
+
+            <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/rvPrinterList"
+                android:name="com.samilcts.app.paymgate.demo.nice.mpaio2.ItemListFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="GridLayoutManager"
+                tools:context="com.samilcts.app.paymgate.demo.nice.mpaio2.BuyActivity"
+                tools:listitem="@layout/content_list_printer"
+                android:paddingLeft="@dimen/margin_setting_list_h" />
+        </LinearLayout>
+    </android.support.percent.PercentFrameLayout>

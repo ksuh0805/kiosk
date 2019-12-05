@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="array_installment" translatable="false">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="array_pay_type" translatable="false">
+        <item>@string/type_pay_card</item>
+        <item>@string/type_pay_cash</item>
+    </string-array>
+
+    <string name="type_pay_card" >Card</string>
+    <string name="type_pay_cash" >Cash Receipt</string>
+
+    <string-array name="array_cash_type" translatable="false">
+        <item>@string/cash_type_personal</item>
+        <item>@string/cash_type_business</item>
+    </string-array>
+
+    <string name="cash_type_personal" >Individual</string>
+    <string name="cash_type_business" >Business</string>
+
+    <string-array name="array_cancel_reason" translatable="false">
+        <item>@string/cash_trade_cancel</item>
+        <item>@string/cash_error_issue</item>
+        <item>@string/cash_etc</item>
+    </string-array>
+
+    <string name="cash_trade_cancel" >Cancellation</string>
+    <string name="cash_error_issue" >Error issue</string>
+    <string name="cash_etc" >ETC</string>
+    <string name="network_not_available">Network not available</string>
+    <string name="pay_setting_title">Payment Setting</string>
+    <string name="title_pay">Card</string>
+    <string name="wait">Wait&#8230;</string>
+    <string name="sign_title">Sign</string>
+    <string name="pin_title" translatable="false">PIN</string>
+
+
+    <string name="payment_type">Payment type</string>
+    <string name="installment">Installment</string>
+    <string name="cash_receipt_type">Cash Receipt Type</string>
+    <string name="installment_month">month</string>
+    <string name="revocation_type">Revocation Type</string>
+    <string name="revocation_reason">Revocation Reason</string>
+
+</resources>

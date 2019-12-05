@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuyActivity">
+
+    <include layout="@layout/app_bar"></include>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            android:id="@+id/coordinatorLayout">
+
+            <include layout="@layout/content_buy" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/buy_fab_ic"
+                app:layout_behavior="com.samilcts.app.mpaio.demo2.util.BadgeBehavior"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginTop="@dimen/fab_margin"
+                android:layout_marginBottom="@dimen/fab_margin" />
+
+            <TextView
+                android:id="@+id/tvBadge"
+                android:ellipsize="end"
+                android:elevation="6dp"
+                android:layout_gravity="bottom|right"
+                android:background="@drawable/background_badge"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_badge_content"
+                android:textStyle="bold"
+
+
+               app:layout_behavior="com.samilcts.app.mpaio.demo2.util.BadgeBehavior"
+
+                android:text="1"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="@dimen/margin_right_badge"
+                android:layout_marginBottom="@dimen/margin_bottom_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+

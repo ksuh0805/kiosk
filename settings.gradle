@@ -1,0 +1,1 @@
+include ':mpos_test_tool', ':mpaio_ext_dialogs', ':util', ':mpaio_sdk', ':mpaio_ext_nice', ':paymgate_nice_interface', ':media', 'paymgate_nice_dialog', ':plugin_paymgate_nice', ':dialogs',':paymgate_nice_demo', 'mPrinter',':mpaio_demo2'

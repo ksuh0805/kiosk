@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorAccent</color>
+    <color name="colorPrimaryDark">@color/colorAccent</color>
+    <color name="colorAccent">#80CFB3</color>
+
+
+ <!--   <color name="colorWindowBackground">#e1e1e1</color>-->
+
+    <color name="colorWhite">@android:color/white</color>
+
+    <color name="colorWhite10">#19FFFFFF</color>
+    <color name="colorWhite20">#33FFFFFF</color>
+    <color name="colorWhite54">#8AFFFFFF</color>
+    <color name="colorWhite65">#A5FFFFFF</color>
+    <color name="colorWhite70">#b2ffffff</color>
+
+    <color name="colorDark20">#33000000</color>
+
+    <color name="colorDrawerBackground">#1E212A</color>
+
+
+    <color name="colorDialogBackground">#FAFAFA</color>
+
+
+    <color name="colorProductName">#4D9DB8</color>
+</resources>

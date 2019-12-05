@@ -1,0 +1,50 @@
+<resources>
+
+    <string name="app_name" >MPAIO Demo2</string>
+
+    <string name="title_activity_buy" translatable="false">BUY</string>
+    <string name="title_activity_keypad" translatable="false">KEY PAD</string>
+    <string name="title_activity_cart" translatable="false">CART</string>
+
+    <string name="title_activity_revoke" translatable="false">REVOKE</string>
+
+    <string name="title_activity_manual_revoke" translatable="false">REVOKE</string>
+    <string name="title_activity_prepaid_card" translatable="false">PREPAID CARD</string>
+    <string name="title_activity_settings" translatable="false">PRINT SET</string>
+    <string name="title_activity_receipt" translatable="false">RECEIPT</string>
+    <string name="title_activity_prepaid_log" translatable="false">TRANSACTION LOG</string>
+
+    <string name="title_activity_taxi" translatable="false">TAXI</string>
+
+    <string name="action_barcode" translatable="false">Barcode</string>
+
+    <string name="input_signature">Write your signature</string>
+    <string name="printer_not_connected">Printer is not connected.</string>
+
+    <string name="can_not_add_to_cart">can\'t add to cart over $0</string>
+    <string name="can_not_find_product">can\'t find product match with barcode.</string>
+    <string name="disconnected">disconnected</string>
+    <string name="error_response_fail">request not success</string>
+    <string name="error_response_timeout">response timeout</string>
+    <string name="error_response_invalid">response invalid</string>
+    <string name="fail_to_connect">fail to connect</string>
+
+    <string name="added_to_cart">$0 is added to cart</string>
+    <string name="title_exit">Exit?</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="print_receipt" translatable="false">Print Receipt</string>
+    <string name="print" translatable="false">print</string>
+    <string name="start" translatable="false">START</string>
+    <string name="stop" translatable="false">STOP</string>
+    <string name="name_prepaid_card">Samil prepaid card</string>
+    <string name="plugin_not_installed">Plugin PAYmGATE NICE(KMPOSAND) is not Installed or not required version.\n
+    Do you want to install?(necessary) </string>
+    <string name="title_charge">Charge</string>
+    <string name="title_extra_charge">Extra\ncharge</string>
+    <string name="title_taxi_total">Total</string>
+
+    <string name="fail_to_read_card_data">fail to read. try again.</string>
+    <string name="enter_pin">Enter full PIN</string>
+    <string name="app_exited">Exit app because device is disconnected</string>
+
+</resources>

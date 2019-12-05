@@ -1,0 +1,118 @@
+buildscript {
+    repositories {
+      flatDir {
+            dirs 'libs'
+        }
+    }
+
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'paymgate_demo2'
+            keyPassword 'ejsystem'
+            storeFile file('C:/Users/pc/Desktop/SDKAndroid.master/ejsystem.keystore')
+            storePassword 'ejsystem'
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.samilcts.mpos.demo.mpaio2"
+        minSdkVersion 18
+        targetSdkVersion 28
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+
+        dev {
+            applicationId 'com.samilcts.mpos.demo.mpaio2.dev'
+            versionCode 20301
+            versionName "2.3.1"
+            project.ext.set("archivesBaseName", "MPAIO Demo2 v"+ versionName);
+        }
+
+        product {
+            applicationId 'com.samilcts.mpos.demo.mpaio2'
+            versionCode 20301
+            versionName "2.3.1"
+            project.ext.set("archivesBaseName", "MPAIO Demo2 v"+ versionName);
+        }
+
+    }
+
+    dexOptions {
+        // Sets the maximum number of DEX processes
+        // that can be started concurrently.
+        maxProcessCount 8
+        // Sets the maximum memory allocation pool size
+        // for the dex operation.
+        javaMaxHeapSize "2g"
+        // Enables Gradle to pre-dex library dependencies.
+        preDexLibraries true
+    }
+}
+
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation('com.mikepenz:materialdrawer:4.6.1@aar') {
+        transitive = true
+    }
+    implementation project(':mPrinter')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:percent:28.0.0'
+    implementation 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
+    implementation 'me.grantland:autofittextview:0.2.1'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    implementation 'io.reactivex:rxjava:1.2.10'
+    implementation 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    implementation 'com.bartoszlipinski.recyclerviewheader:library:1.2.1'
+    implementation 'com.github.johnkil.android-robototextview:robototextview:4.0.0'
+    implementation('com.mikepenz:materialize:0.5.1@aar') {
+        transitive = true
+    }
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.4.2'
+    // And ProGuard rules for RxJava!
+    implementation 'com.artemzin.rxjava:proguard-rules:1.2.7.0'
+    implementation 'com.google.guava:guava:24.0-android'
+    implementation 'io.paperdb:paperdb:2.6'
+    implementation 'com.google.zxing:core:3.3.1'
+    //implementation project(':media')
+    implementation project(':mPrinter')
+    implementation project(':mpaio_ext_dialogs')
+    implementation project(':mpaio_sdk')
+    implementation project(':util')
+    implementation project(':dialogs')
+}

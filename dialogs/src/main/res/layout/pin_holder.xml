@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+    <com.devspark.robototextview.widget.RobotoEditText
+        android:id="@+id/etPin"
+        style="@style/RobotoMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        android:clickable="false"
+        android:contextClickable="false"
+        android:enabled="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberPassword"
+        android:linksClickable="false"
+
+        android:longClickable="false"
+        android:maxLength="20"
+        android:text="123"
+        android:textAlignment="gravity"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:textCursorDrawable="@null"
+        android:textIsSelectable="false"
+        android:textSize="@dimen/size_pin_holder"
+        tools:targetApi="m" />
+
+</RelativeLayout>
+
+

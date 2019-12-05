@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_receipt_product"
+    android:orientation="horizontal"
+    android:background="?android:attr/selectableItemBackground"
+
+    >
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_weight="1"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/size_receipt_product"
+        style="@style/RobotoMedium"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:layout_gravity="bottom"
+        android:text="name1" />
+
+    <FrameLayout
+        android:layout_width="@dimen/width_receipt_product_price"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:layout_width="@dimen/width_receipt_product_price"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$8.50"
+            android:id="@+id/tvTagPrice"
+            android:layout_below="@+id/tvName"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_product"
+            style="@style/RobotoMedium"
+            android:textAlignment="center" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/width_receipt_product_number"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:layout_width="@dimen/width_receipt_product_number"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="2"
+            android:id="@+id/tvAmount"
+            android:layout_below="@+id/tvName"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_receipt_product"
+
+            style="@style/RobotoMedium" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/width_receipt_product_total_price"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="$17"
+            android:id="@+id/tvPrice"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_alignBottom="@+id/tvAmount"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_product"
+            style="@style/RobotoMedium"
+            android:layout_gravity="right" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/colorDialogBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/width_dialog_content"
+        android:layout_height="@dimen/height_dialog"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="@dimen/width_dialog_content"
+            android:layout_height="@dimen/height_dialog_title"
+            android:gravity="center_vertical">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/title_pay"
+                android:id="@+id/textView8"
+                android:layout_weight="1"
+                android:textSize="@dimen/size_dialog_title"
+                android:textColor="@android:color/black"
+                app:robotoTypeface="roboto_medium"
+                android:autoText="false"
+                android:alpha="0.54" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnClose"
+                android:background="@drawable/btn_close"
+                android:alpha="0.54" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="@dimen/width_dialog_content"
+            android:layout_height="@dimen/height_dialog_content">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/wait"
+                android:id="@+id/tvMsg"
+                android:gravity="center"
+                android:background="@drawable/background_card"
+                app:robotoTypeface="roboto_medium"
+                android:textSize="@dimen/size_dialog_card_msg"
+                android:textColor="@android:color/black"
+                android:alpha="0.7" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ivState"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

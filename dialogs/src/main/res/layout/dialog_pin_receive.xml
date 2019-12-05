@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/colorDialogBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/width_dialog_content"
+        android:layout_height="@dimen/height_dialog"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="@dimen/width_dialog_content"
+            android:layout_height="@dimen/height_dialog_title"
+            android:gravity="center_vertical">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="PIN Entry"
+                android:id="@+id/textView8"
+                android:layout_weight="1"
+                android:textSize="@dimen/size_dialog_title"
+                android:textColor="@android:color/black"
+                app:robotoTypeface="roboto_medium"
+                android:autoText="false"
+                android:alpha="0.54" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnClose"
+                android:background="@drawable/btn_close"
+                android:alpha="0.54" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="@dimen/width_dialog_content"
+            android:layout_height="@dimen/height_dialog_content2">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <EditText
+                    android:layout_width="@dimen/width_pin_underline"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:id="@+id/etPin1"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:textColor="@color/colorBlack87"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="@dimen/width_pin_underline"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:id="@+id/etPin2"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:textColor="@color/colorBlack87"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="@dimen/width_pin_underline"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:id="@+id/etPin3"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:textColor="@color/colorBlack87"
+                    android:gravity="center" />
+
+                <EditText
+                    android:layout_width="@dimen/width_pin_underline"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberPassword"
+                    android:id="@+id/etPin4"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:textColor="@color/colorBlack87"
+                    android:gravity="center" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnOk"
+                android:background="@drawable/btn_ok"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- 다이얼로그 -->
+
+    <dimen name="width_dialog">280dp</dimen>
+    <dimen name="height_dialog">284dp</dimen>
+
+    <dimen name="width_dialog_content">238dp</dimen>
+    <dimen name="height_dialog_content">148dp</dimen>
+    <dimen name="height_dialog_content2">148dp</dimen>
+    <dimen name="height_dialog_title">68dp</dimen>
+    <dimen name="size_dialog_card_msg">16sp</dimen>
+    <dimen name="size_dialog_title">20sp</dimen>
+    <dimen name="size_pin_holder">50sp</dimen>
+
+    <dimen name="width_pin_underline">31.333dp</dimen>
+    <dimen name="size_pin_btn">60dp</dimen>
+    <dimen name="size_pin_text">16sp</dimen>
+</resources>

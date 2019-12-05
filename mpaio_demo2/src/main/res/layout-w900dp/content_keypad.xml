@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".KeyPadActivity"
+    tools:showIn="@layout/activity_keypad">
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/content_keypad_button"
+
+        app:layout_marginLeftPercent="@fraction/margin_left_percent_keypad"
+        app:layout_marginTopPercent="@fraction/margin_top_percent_keypad"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/content_keypad_price"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        app:layout_marginRightPercent="@fraction/margin_right_percent_keypad_price"
+        app:layout_marginTopPercent="@fraction/margin_top_percent_keypad_price"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+
+</android.support.percent.PercentRelativeLayout>

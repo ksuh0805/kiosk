@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_left_product_name"
+    android:paddingRight="@dimen/margin_right_product_btn">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_receipt_content_v"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:background="@color/colorWhite20"
+            android:layout_below="@+id/tvAddress"
+            android:id="@+id/flDivide4"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/balance_before_transaction"
+                android:id="@+id/textView28"
+                android:layout_below="@+id/textView27"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/tvPreBalance"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignTop="@+id/textView25"
+                android:layout_alignParentRight="true"
+                tools:text="0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/transaction_amount"
+                android:id="@+id/textView27"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="0"
+                android:id="@+id/tvTradeAmount"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignTop="@+id/textView25"
+                android:layout_alignParentRight="true"
+                tools:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/balance_after_transaction"
+                android:id="@+id/textView29"
+                android:layout_below="@+id/textView28"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/tvAfterBalance"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignTop="@+id/textView25"
+                android:layout_alignParentRight="true"
+                tools:text="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/transaction_number"
+                android:id="@+id/textView21"
+                android:layout_below="@+id/textView30"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/tvTradeNumber"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignTop="@+id/textView21"
+                android:layout_alignParentRight="true"
+                android:text="000000000000"
+                tools:text="000000000000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/title_affiliate_name"
+                android:id="@+id/textView32"
+                android:layout_below="@+id/textView31"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/affiliate_name"
+                android:id="@+id/tvAffiliateName"
+                android:layout_above="@+id/textView33"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignParentRight="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/title_representative"
+                android:id="@+id/textView33"
+                android:layout_below="@+id/textView32"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/company_representative"
+                android:id="@+id/tvRepresentativeName"
+                android:layout_alignTop="@+id/textView33"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignParentRight="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/title_crn"
+                android:id="@+id/textView34"
+                android:layout_below="@+id/textView33"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/tvCorporateNumber"
+                android:layout_above="@+id/tvAddress"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                tools:text="@string/company_registration_number"
+                android:layout_gravity="right" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/company_address"
+            android:id="@+id/tvAddress"
+
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:background="@color/colorWhite20"
+
+            android:id="@+id/flDivide3" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/title_affiliate_tel"
+                android:id="@+id/textView35"
+                android:layout_below="@+id/flDivide4"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/affiliate_phone"
+                android:id="@+id/tvAffiliatePhoneNumber"
+                android:layout_alignTop="@+id/textView35"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_receipt_info"
+                android:layout_alignParentRight="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/thanks"
+            android:id="@+id/tvMessage"
+            android:layout_below="@+id/textView35"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+    </LinearLayout>
+
+</LinearLayout>

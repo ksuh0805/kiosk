@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+	android:padding="5dp">
+
+	<TextView android:id="@+id/paired"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="12sp"
+		android:layout_alignParentRight="true"
+		android:text="@string/paired"
+		android:textColor="@android:color/darker_gray" />
+
+	<TextView android:id="@+id/rssi"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="12sp"
+		android:layout_alignParentRight="true"
+		android:layout_below="@+id/paired" />
+
+	<TextView android:id="@+id/name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="14sp"
+		android:layout_alignParentLeft="true"
+		android:textColor="@android:color/darker_gray"
+		android:text="name" />
+
+	<TextView android:id="@+id/address"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/name"
+		android:textColor="@android:color/darker_gray"
+		android:text="address"
+		android:textSize="10sp" />
+
+</RelativeLayout>

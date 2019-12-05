@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+     android:layout_height="@dimen/height_setting_list_item">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="?android:attr/selectableItemBackground"
+
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton"
+            android:checked="false"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/radioButton"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/progressBar">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Name"
+                android:layout_alignParentStart="false"
+                android:layout_toRightOf="@+id/radioButton"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_setting_big"
+
+                style="@style/RobotoLight"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.devspark.robototextview.widget.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Address"
+                    android:id="@+id/tvAddress"
+                    android:layout_below="@+id/tvName"
+                    android:layout_toRightOf="@+id/radioButton"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/size_setting_small"
+                    style="@style/RobotoLight"/>
+
+                <com.devspark.robototextview.widget.RobotoTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="pared"
+                    android:id="@+id/tvState"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/size_setting_small"
+                    style="@style/RobotoLight"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_gravity="right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_marginRight="@dimen/margin_setting_list_h"
+            android:layout_marginLeft="@dimen/margin_setting_list_h"
+            android:visibility="invisible"
+
+            android:indeterminate="false" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_divider"
+        android:background="@color/colorWhite10"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom" />
+
+</FrameLayout>

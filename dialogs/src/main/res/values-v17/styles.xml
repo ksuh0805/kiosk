@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MySpinnerItemDark" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textAppearance">@style/MyTextAppearanceSpinnerItemDark</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+</resources>

@@ -1,0 +1,33 @@
+<resources>
+
+
+
+
+    <string name="info_cancel">Press back button if you want cancel.</string>
+    <string name="payment_unusable_card">Unusable card.\n try payment with other card.</string>
+    <string name="type_msc">MS card</string>
+    <string name="type_emv">EMV card</string>
+    <string name="type_rfid">RFID card</string>
+    <string name="type_barcode">Barcode</string>
+    <string name="type_pin_pad">PIN pad</string>
+    <string name="type_telegram">Telegram</string>
+    <string name="type_fallback">Fallback</string>
+    <string name="type_abnormal_fallback">Abnormal Fallback</string>
+    <string name="state_ic_not_respond">(IC) Chip not respond</string>
+    <string name="state_ic_no_app">(IC) Mutual support app does not exist. </string>
+    <string name="state_ic_read_fail">(IC) Failed to read chip data</string>
+    <string name="state_ic_no_mandatory_data">(IC) Without mandatory data.</string>
+    <string name="state_ic_terminal_malfunction">(IC) Terminal Malfunction</string>
+    <string name="state_msr_use_ic">Please pay by IC card..</string>
+    <string name="state_abnormal_fallback_application_block">Application block.</string>
+    <string name="state_abnormal_fallback_card_block">Card block</string>
+    <string name="type_unknown">Unknown type</string>
+    <string name="state_unknown">Unknown state</string>
+    <string name="state_wait">Wait</string>
+    <string name="state_proceeding">proceeding</string>
+    <string name="state_complete">complete</string>
+    <string name="state_fail">Fail\nPlease try again or use a different payment method.</string>
+    <string name="state_cancel">Cancel</string>
+
+
+</resources>

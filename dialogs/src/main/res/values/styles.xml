@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RobotoMedium">
+        <item name="robotoTypeface">roboto_medium</item>
+    </style>
+
+
+    <style name="MySpinnerThemeDark" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:spinnerItemStyle">@style/MySpinnerItemDark</item>
+
+
+        <!-- <item name="android:gravity">center</item>-->
+        <item name="colorControlNormal">@color/colorAccent</item>
+
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="MySpinnerItemDark" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textAppearance">@style/MyTextAppearanceSpinnerItemDark</item>
+
+    </style>
+
+
+    <style name="MyTextAppearanceSpinnerItemDark" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/black_1000</item>
+        <!--  <item name="android:textSize">@dimen/size_product_item_list_text</item>-->
+    </style>
+
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mpos_sdk_connection_type_wire" translatable="false">Wire</string>
+    <string name="mpos_sdk_connection_type_ble" translatable="false">BLE</string>
+    <string name="mpos_sdk_connection_dialog_title" >Select Connection Type</string>
+    <string name="mpos_sdk_mpos_not_attached">connect MPOS with USB cable</string>
+
+    <string name="paired" translatable="false">paired</string>
+
+
+
+</resources>

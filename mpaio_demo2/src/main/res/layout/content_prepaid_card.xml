@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.samilcts.app.mpaio.demo2.PrepaidCardActivity"
+    tools:showIn="@layout/activity_prepaid_card"
+    android:orientation="vertical"
+
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/rlBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@color/colorWhite20"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="@dimen/width_dialog"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnRecharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|top"
+                    android:background="@drawable/btn_transparent"
+                    android:text="recharge"
+                    android:textColor="@drawable/color_accent_to_white"
+                    android:visibility="invisible" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+                <Button
+                    android:id="@+id/btnRefund"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btn_transparent"
+                    android:text="Refund"
+                    android:textColor="@drawable/color_accent_to_white"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btn_transparent"
+                    android:text="Balance"
+                    android:textColor="@drawable/color_accent_to_white"
+                    android:visibility="visible" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+                <Button
+                    android:id="@+id/btnLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/btn_transparent"
+                    android:text="Transaction log"
+                    android:textColor="@drawable/color_accent_to_white"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rlBox"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:orientation="horizontal">
+
+        <include
+            layout="@layout/content_keypad_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_left_product_name"
+    android:paddingRight="@dimen/margin_right_product_btn">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvIssuer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_total"
+            tools:text="KB card" />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvIssuer"
+            android:text="@string/title_credit_approval"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tvIssuer"
+            android:text="@string/title_for_customer"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <FrameLayout
+            android:id="@+id/flDivide1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:layout_below="@+id/tvType"
+            android:background="@color/colorWhite20" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/flDivide1"
+            android:text="@string/title_membership_number"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvMembershipNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView19"
+            android:text="5433-33**-****-9199"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMembershipNumber"
+            android:text="@string/title_validity_period"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvIssueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView22"
+            android:text="@string/title_year_month"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView20"
+            android:layout_below="@+id/tvMembershipNumber"
+            android:text="@string/transaction_date"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvApprovalDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView23"
+            android:layout_below="@+id/textView22"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            tools:text="15/12/21 14:32:24" />
+
+        <FrameLayout
+            android:id="@+id/flDivide2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:layout_below="@+id/tvIssueDate"
+            android:background="@color/colorWhite20" />
+
+        <TextView
+            android:id="@+id/tvInstallment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flDivide2"
+            android:text="@string/lump_sum"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvCatId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvMembershipNumber"
+            android:layout_toEndOf="@+id/textView20"
+            android:text="2393300001"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvReceiptType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvIssuer"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tvIssuer"
+            android:text="@string/title_receipt_sales"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_total" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView19"
+            android:layout_alignBottom="@+id/textView19"
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@+id/textView19"
+            android:text="CATID :"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+    </RelativeLayout>
+
+</LinearLayout>

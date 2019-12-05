@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="info_cancel">취소하려면 기기의 뒤로가기 버튼을 누르세요.</string>
+    <string name="payment_unusable_card">사용할 수 없는 카드 입니다.\n 다른 카드로 다시 결제를 시도해주세요.</string>
+    <string name="type_msc">마그네틱 카드</string>
+    <string name="type_emv">IC 카드</string>
+    <string name="type_rfid">RFID 카드</string>
+    <string name="type_barcode">바코드</string>
+    <string name="type_pin_pad">PIN 패드</string>
+    <string name="type_telegram">전문</string>
+    <string name="type_fallback">폴백</string>
+    <string name="type_abnormal_fallback">비정상 폴백</string>
+    <string name="state_ic_not_respond">Chip 응답 없음</string>
+    <string name="state_ic_no_app">상호지원 App 미 존재</string>
+    <string name="state_ic_read_fail">Chip 데이터 읽기 실패</string>
+    <string name="state_ic_no_mandatory_data">필수 데이터 미포함</string>
+    <string name="state_ic_terminal_malfunction"> 터미널 오동작</string>
+    <string name="state_msr_use_ic">IC 카드로 결제해주세요.</string>
+    <string name="state_abnormal_fallback_application_block">어플리케이션 블럭</string>
+    <string name="state_abnormal_fallback_card_block">카드 블럭</string>
+    <string name="type_unknown">미정의 타입</string>
+    <string name="state_unknown">미정의 상태</string>
+    <string name="state_wait">대기</string>
+    <string name="state_proceeding">진행</string>
+    <string name="state_complete">완료</string>
+    <string name="state_fail">실패\n다시 시도하시거나 다른 결제 수단을 이용해주세요.</string>
+    <string name="state_cancel">취소</string>
+
+
+</resources>

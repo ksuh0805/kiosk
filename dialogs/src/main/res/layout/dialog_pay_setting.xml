@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="@color/colorDialogBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="@dimen/width_dialog_content"
+        android:layout_height="@dimen/height_dialog"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="@dimen/width_dialog_content"
+            android:layout_height="@dimen/height_dialog_title"
+            android:gravity="center_vertical">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/pay_setting_title"
+                android:id="@+id/textView8"
+                android:layout_weight="1"
+                android:textSize="@dimen/size_dialog_title"
+                android:textColor="@android:color/black"
+                app:robotoTypeface="roboto_medium"
+                android:autoText="false"
+                android:alpha="0.54" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnClose"
+                android:background="@drawable/btn_close"
+                android:alpha="0.54" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="@dimen/width_dialog_content"
+            android:layout_height="@dimen/height_dialog_content2">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/payment_type"
+                    android:id="@+id/tvPayType"
+                    android:textColor="@android:color/black"
+                    android:alpha="0.54" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spnPayType"
+                    android:entries="@array/array_pay_type"
+                    android:theme="@style/MySpinnerThemeDark"
+                    />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/llInstallment">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/installment"
+                        android:id="@+id/tvInstallment"
+                        android:textColor="@android:color/black"
+                        android:alpha="0.54" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <android.support.v7.widget.AppCompatSpinner
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/spnInstallment"
+                            android:entries="@array/array_installment"
+                            android:theme="@style/MySpinnerThemeDark"
+                          />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="@string/installment_month"
+                            android:id="@+id/tvMonth"
+                            android:textColor="@android:color/black"
+                            android:alpha="0.54" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/llCashReceipt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/cash_receipt_type"
+                        android:id="@+id/tvReceiptType"
+                        android:textColor="@android:color/black"
+                        android:alpha="0.54" />
+
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spnCashReceiptType"
+                        android:entries="@array/array_cash_type"
+                        android:theme="@style/MySpinnerThemeDark"
+                        android:focusable="false" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnOk"
+                android:background="@drawable/btn_ok"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+

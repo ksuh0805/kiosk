@@ -1,0 +1,23 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+       <!-- <item name="android:statusBarColor">@color/colorDark20</item>-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <item name="android:fitsSystemWindows">true</item>
+
+
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <item name="colorPrimary">@color/colorDark20</item>
+        <item name="colorPrimaryDark">@color/colorDark20</item>
+        <item name="android:textColorPrimary">@color/colorWhite54</item>
+    </style>
+
+</resources>

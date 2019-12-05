@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:showDividers="beginning|middle|end"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:id="@+id/key_1"
+                android:src="@drawable/btn_keypad_01"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v"
+                android:tag="1"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:id="@+id/key_2"
+                android:src="@drawable/btn_keypad_02"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v"
+                android:tag="2"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="3"
+                android:id="@+id/key_3"
+                android:src="@drawable/btn_keypad_03"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="4"
+                android:id="@+id/key_4"
+                android:src="@drawable/btn_keypad_04"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="5"
+                android:id="@+id/key_5"
+                android:src="@drawable/btn_keypad_05"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="6"
+                android:id="@+id/key_6"
+                android:src="@drawable/btn_keypad_06"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="7"
+                android:id="@+id/key_7"
+                android:src="@drawable/btn_keypad_07"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="8"
+                android:id="@+id/key_8"
+                android:src="@drawable/btn_keypad_08"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="9"
+                android:id="@+id/key_9"
+                android:src="@drawable/btn_keypad_09"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="0"
+                android:id="@+id/key_0"
+                android:src="@drawable/btn_keypad_10"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="."
+                android:id="@+id/key_dot"
+                android:src="@drawable/btn_keypad_11"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:tag="00"
+                android:id="@+id/key_00"
+                android:src="@drawable/btn_keypad_12"
+                android:layout_marginLeft="@dimen/margin_key_h"
+                android:layout_marginRight="@dimen/margin_key_h"
+                android:layout_marginTop="@dimen/margin_key_v"
+                android:layout_marginBottom="@dimen/margin_key_v" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

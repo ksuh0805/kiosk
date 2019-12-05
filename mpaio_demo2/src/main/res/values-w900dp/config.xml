@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="product_column">2</integer>
+
+    <fraction name="margin_left_percent_keypad">7.03125%</fraction>
+    <fraction name="margin_top_percent_keypad">15.5555%</fraction>
+    <fraction name="margin_right_percent_keypad_price">12.1875%</fraction>
+    <fraction name="margin_top_percent_keypad_price">39.4444%</fraction>
+
+    <fraction name="padding_left_percent_setting">7.34375%</fraction>
+    <fraction name="padding_right_percent_setting">40.3125%</fraction>
+
+</resources>

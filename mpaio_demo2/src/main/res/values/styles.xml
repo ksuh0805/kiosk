@@ -1,0 +1,143 @@
+ <resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@drawable/background</item>
+
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+     <style name="AppTheme.AppBarOverlay" >
+
+         <item name="colorPrimary">@color/colorDark20</item>
+         <!--<item name="colorPrimary">@android:color/transparent</item>-->
+         <item name="colorPrimaryDark">@color/colorDark20</item>
+
+         <!--<item name="android:background">@color/colorDark20</item>-->
+         <!-- android:textColorPrimary is the color of the title text in the Toolbar  -->
+         <item name="android:textColorPrimary">@color/colorWhite54</item>
+         <item name="colorControlNormal">@color/colorWhite54</item>
+
+     </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
+
+
+    </style>
+
+
+
+     <style name="RevokeSpinnerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+         <item name="android:spinnerItemStyle">@style/RevokeSpinnerItem</item>
+
+
+         <!-- <item name="android:gravity">center</item>-->
+         <item name="colorControlNormal">@color/colorWhite</item>
+
+         <item name="android:paddingLeft">0dp</item>
+         <item name="android:paddingRight">0dp</item>
+     </style>
+
+     <style name="RevokeSpinnerItem" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
+         <item name="android:textAppearance">@style/RevokeTextAppearanceSpinnerItem</item>
+         <item name="android:textAlignment">center</item>
+
+     </style>
+
+
+     <style name="RevokeTextAppearanceSpinnerItem" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+         <item name="android:textColor">@color/colorWhite</item>
+         <!--<item name="android:textSize">@dimen/size_product_item_list_text</item>-->
+     </style>
+
+
+
+    <style name="MySpinnerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:spinnerItemStyle">@style/MySpinnerItem</item>
+
+
+       <!-- <item name="android:gravity">center</item>-->
+        <item name="colorControlNormal">@color/colorWhite</item>
+
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+
+     <style name="MySpinnerItem" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
+         <item name="android:textAppearance">@style/MyTextAppearanceSpinnerItem</item>
+         <item name="android:textAlignment">center</item>
+
+     </style>
+
+
+     <style name="MyTextAppearanceSpinnerItem" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+         <item name="android:textColor">@color/colorWhite</item>
+         <item name="android:textSize">@dimen/size_product_item_list_text</item>
+     </style>
+
+
+
+     <style name="MySpinnerThemeDark" parent="Theme.AppCompat.Light.DarkActionBar">
+
+         <item name="android:spinnerItemStyle">@style/MySpinnerItemDark</item>
+
+
+         <!-- <item name="android:gravity">center</item>-->
+         <item name="colorControlNormal">@color/accent</item>
+
+         <item name="android:paddingLeft">0dp</item>
+         <item name="android:paddingRight">0dp</item>
+     </style>
+
+     <style name="MySpinnerItemDark" parent="Base.Widget.AppCompat.DropDownItem.Spinner">
+         <item name="android:textAppearance">@style/MyTextAppearanceSpinnerItemDark</item>
+         <item name="android:textAlignment">center</item>
+
+     </style>
+
+
+     <style name="MyTextAppearanceSpinnerItemDark" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+         <item name="android:textColor">@color/md_black_1000</item>
+       <!--  <item name="android:textSize">@dimen/size_product_item_list_text</item>-->
+     </style>
+
+
+     <style name="MyDialogTheme" parent="Theme.AppCompat.Dialog">
+         <!-- Fill the screen -->
+         <item name="android:layout_width">@dimen/width_dialog</item>
+         <item name="android:layout_height">@dimen/height_dialog</item>
+
+         <!-- No backgrounds, titles or window float -->
+         <item name="android:windowBackground">@null</item>
+         <item name="android:windowNoTitle">true</item>
+
+         <item name="colorControlNormal">@color/colorAccent</item>
+
+     </style>
+
+     <style name="RobotoMedium">
+         <item name="robotoTypeface">roboto_medium</item>
+    </style>
+
+     <style name="RobotoLight">
+         <item name="robotoTypeface">roboto_light</item>
+     </style>
+</resources>

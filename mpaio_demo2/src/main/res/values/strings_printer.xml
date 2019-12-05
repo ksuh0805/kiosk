@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="printer_connected">Printer connected</string>
+    <string name="printer_fail_connect">Failed to connect to printer.</string>
+    <string name="printer_connecting">Attempt to connect to the printer</string>
+    <string name="want_reconnect_printer">Do you want to connect to the last printer you connected to?</string>
+</resources>

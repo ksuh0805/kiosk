@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">mpaio_dialogs</string>
+    <string name="mpos_sdk_ble_not_available">ble not available</string>
+    <string name="mpos_sdk_bluetooth_not_turn_on">bluetooth not turning on</string>
+    <string name="mpos_sdk_bluetooth_not_supported">bluetooth not supported</string>
+    <string name="mpos_sdk_bluetooth_fail_turn_on">Failed to turn on bluetooth</string>
+
+</resources>

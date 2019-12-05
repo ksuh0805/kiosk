@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite10"
+    android:gravity="center">
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="TOTAL SALES"
+        android:id="@+id/textView15"
+        android:textSize="@dimen/size_title_total"
+        android:textColor="@color/colorAccent"
+        style="@style/RobotoMedium" />
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="$ 255.90"
+        android:id="@+id/total"
+        android:textSize="@dimen/size_value_total"
+        android:textColor="@android:color/white"
+
+        style="@style/RobotoLight"/>
+
+</LinearLayout>

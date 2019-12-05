@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item android:drawable="@android:drawable/ic_menu_gallery" android:state_checked="false"></item>
+    <item android:drawable="@android:drawable/ic_menu_close_clear_cancel" android:state_checked="true"></item>-->
+
+    <item android:drawable="@drawable/buy_card_ic01_normal" android:state_pressed="false" />
+    <item android:drawable="@drawable/buy_card_ic01_pressed" android:state_pressed="true" />
+
+</selector>

@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/connection_dialog_content_margin"
+
+    >
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            >
+
+            <RadioGroup
+                android:id="@+id/select_connection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/rbUSB"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp">
+
+                <RadioButton
+                    android:id="@+id/rbUSB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mpos_sdk_connection_type_wire"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rbBLE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mpos_sdk_connection_type_ble"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical">
+
+                    <me.grantland.widget.AutofitTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/mpos_sdk_mpos_not_attached"
+                        android:id="@+id/tvUsbMsg"
+
+                        android:lines="1"
+                        android:visibility="invisible"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1">
+
+                    <me.grantland.widget.AutofitTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/mpos_sdk_mpos_not_attached"
+                        android:layout_gravity="center_vertical|end"
+
+
+                        android:visibility="invisible"
+                        android:lines="1"
+
+                        android:id="@+id/tvBleMsg"
+                        android:layout_weight="1" />
+
+                    <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/progBleScan"
+                        android:indeterminate="false"
+                        android:visibility="invisible"
+
+                        android:layout_gravity="center_vertical|end" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/select_connection_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stackFromBottom="false"
+            android:visibility="invisible"
+            android:longClickable="false"
+
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"
+            android:id="@+id/btnOk" />
+
+    </LinearLayout>

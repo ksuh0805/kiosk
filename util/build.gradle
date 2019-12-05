@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+
+ext {
+    PUBLISH_GROUP_ID = 'com.samilcts'
+    PUBLISH_ARTIFACT_ID = 'util'
+
+}
+
+android {
+
+    publishNonDefault true
+
+    compileSdkVersion 28
+    compileOptions.encoding = 'UTF-8'
+//    publishNonDefault true
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 10300
+        versionName '1.3.0'
+        project.ext.set("archivesBaseName", "util v"+ versionName);
+    }
+    buildTypes {
+
+        debug {
+
+
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        // Sets the maximum number of DEX processes
+        // that can be started concurrently.
+        maxProcessCount 8
+        // Sets the maximum memory allocation pool size
+        // for the dex operation.
+        javaMaxHeapSize "2g"
+        // Enables Gradle to pre-dex library dependencies.
+        preDexLibraries true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    destinationDir = file("../javadoc/util/")
+    options.links("http://docs.oracle.com/javase/8/docs/api/");
+    options.links("${android.sdkDirectory}/docs/reference");
+
+    failOnError false
+
+    options.encoding = 'UTF-8'
+    options.charSet = 'UTF-8'
+    options.docEncoding = 'UTF-8'
+}

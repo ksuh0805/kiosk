@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="company_address">경기도 성남시 중원구 둔촌대로 388번길 24 (상대원동, 성남우림라이온스밸리3차 805호)</string>
+    <string name="company_representative">최종원</string>
+    <string name="affiliate_name">삼일씨티에스(주)</string>
+
+    <string name="title_samil_prepaid_card">자체선불카드</string>
+    <string name="transaction_amount">거래 금액:</string>
+    <string name="balance_after_transaction">거래 후 잔액:</string>
+    <string name="transaction_number">거래 번호:</string>
+    <string name="title_affiliate_name">가맹점명:</string>
+    <string name="title_representative">대표자명:</string>
+    <string name="title_crn">사업자번호:</string>
+    <string name="title_affiliate_tel">가맹점 전화번호:</string>
+    <string name="thanks">감사합니다!</string>
+    <string name="balance_before_transaction">거래 전 잔액 :</string>
+    <string name="title_for_customer">[고객용]</string>
+    <string name="title_membership_number">회원번호</string>
+    <string name="title_issue_date">발급일</string>
+    <string name="title_receipt_sample">" 매출표 (샘플 출력)"</string>
+    <string name="title_receipt_sales">매출표</string>
+    <string name="title_receipt_revoke">취소표</string>
+    <string name="title_receipt_pay">지불표</string>
+    <string name="title_receipt_refund">환불 영수증</string>
+    <string name="title_trade_type_manual">(수동)</string>
+    <string name="title_credit_approval">"신용승인 "</string>
+    <string name="title_cash_receipt">현금영수증</string>
+    <string name="title_validity_period">유효기간</string>
+    <string name="transaction_date">거래일시</string>
+    <string name="title_year_month">"**년**월   "</string>
+    <string name="lump_sum">(일시불)</string>
+    <string name="month_installment">개월 할부</string>
+    <string name="won">원</string>
+    <string name="title_surtax">부 가 세:</string>
+    <string name="title_total">총 합 계:</string>
+    <string name="title_balance">잔    액:</string>
+    <string name="title_approval_number">승인번호:</string>
+    <string name="title_transaction_unique_number">거래고유번호:</string>
+    <string name="title_acquirer_name">매입사명:</string>
+    <string name="title_affiliate_number">가맹번호:</string>
+    <string name="title_receipt_charge">충전 영수증</string>
+    <string name="title_balance_point">잔액/포인트</string>
+    <string name="receipt_pay">사용</string>
+    <string name="receipt_charge">충전</string>
+    <string name="receipt_refund">환불</string>
+    <string name="balance_charge">잔액 충전</string>
+    <string name="balance_refund">잔액 환불</string>
+    <string name="balance_pay">금액 사용</string>
+    <string name="title_terminal_id">처리 단말기 ID :</string>
+    <string name="title_lookup_result">조회 결과</string>
+    <string name="no_record">기록 없음</string>
+    <string name="title_pay_log">구입 로그(최근순)</string>
+    <string name="title_charge_log">충전 로그(최근순)</string>
+    <string name="title_refund_log">환불 로그(최근순)</string>
+    <string name="sample_card">#### 카드</string>
+</resources>

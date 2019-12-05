@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_product_item"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:layout_width="@dimen/width_product_grid_item_btn"
+        android:layout_height="@dimen/height_product_grid_item_btn"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:entries="@array/numbers"
+
+        android:layout_alignBottom="@+id/image"
+        android:textAlignment="viewStart"
+        android:layout_toRightOf="@+id/image"
+        android:theme="@style/MySpinnerThemeDark" />
+
+    <ImageButton
+        android:layout_width="@dimen/width_product_grid_item_btn"
+        android:layout_height="@dimen/height_product_grid_item_btn"
+        android:id="@+id/imageButton"
+        android:scaleType="fitCenter"
+        android:layout_toRightOf="@+id/spinner"
+        android:layout_alignBottom="@+id/image"
+        android:layout_marginLeft="@dimen/spacing_product_grid_item_btn"
+        android:focusableInTouchMode="false"
+        android:src="@drawable/btn_add_cart"
+        android:background="@null" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/image"
+        android:layout_above="@+id/price"
+        android:layout_alignTop="@+id/image">
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:text="Galaxy Note 5"
+            android:textSize="@dimen/size_product_grid_name"
+            android:textColor="@color/colorProductName"
+            app:robotoFontFamily="roboto"
+            app:robotoTextWeight="medium"
+            android:maxLines="3"
+            android:ellipsize="end" />
+
+    </FrameLayout>
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:layout_above="@+id/spinner"
+        android:text="$200"
+        android:textSize="@dimen/size_product_grid_price"
+        app:robotoFontFamily="roboto"
+        app:robotoTextWeight="medium"
+        android:layout_toRightOf="@+id/image" />
+
+    <ImageView
+        android:layout_width="144dp"
+        android:layout_height="@dimen/size_product_grid_item_image"
+        android:id="@+id/image"
+
+        android:layout_marginRight="@dimen/margin_right_product_image"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="@dimen/size_product_grid_item_qrcode"
+        android:layout_height="@dimen/size_product_grid_item_qrcode"
+        android:id="@+id/ivBarcode"
+        android:scaleType="fitCenter"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="false"
+        android:background="@color/colorWhite"
+        android:paddingBottom="5dp"
+        android:paddingRight="5dp" />
+
+</RelativeLayout>

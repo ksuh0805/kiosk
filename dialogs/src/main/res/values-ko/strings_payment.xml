@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="type_pay_card" >카드</string>
+    <string name="type_pay_cash" >현금영수증</string>
+
+    <string name="cash_type_personal" >개인</string>
+    <string name="cash_type_business" >사업자</string>
+
+    <string name="cash_trade_cancel" >거래취소</string>
+    <string name="cash_error_issue" >오류발급</string>
+    <string name="cash_etc" >기타</string>
+
+    <string name="pay_setting_title">결제 설정</string>
+    <string name="title_pay">카드</string>
+    <string name="wait">대기중&#8230;</string>
+    <string name="sign_title">서명</string>
+
+
+    <string name="payment_type">결제 방식</string>
+    <string name="installment">할부</string>
+    <string name="cash_receipt_type">현금영수증 종류</string>
+    <string name="installment_month">개월</string>
+    <string name="revocation_type">취소 유형</string>
+    <string name="revocation_reason">취소 사유</string>
+
+    <string name="network_not_available">네트워크를 사용할 수 없습니다.</string>
+
+</resources>

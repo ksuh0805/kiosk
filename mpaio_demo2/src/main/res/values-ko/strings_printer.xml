@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="printer_connected">프린터와 연결되었습니다.</string>
+    <string name="printer_fail_connect">프린터와 연결하지 못했습니다.</string>
+    <string name="printer_connecting">프린터와 연결을 시도합니다.</string>
+    <string name="want_reconnect_printer">마지막으로 연결했던 프린터와 다시 연결하시겠습니까?</string>
+</resources>

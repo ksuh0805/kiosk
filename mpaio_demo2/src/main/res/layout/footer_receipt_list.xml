@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_left_product_name"
+    android:paddingRight="@dimen/margin_right_product_btn">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_receipt_content_v">
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transaction_amount"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView27"
+            android:text="@string/title_surtax"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView28"
+            android:text="@string/title_total"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView25"
+            android:text="@string/approval_number"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView30"
+            android:text="@string/title_transaction_unique_number"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView29"
+            android:text="@string/title_balance_point"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <FrameLayout
+            android:id="@+id/flDivide3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:layout_below="@+id/textView21"
+            android:background="@color/colorWhite20" />
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flDivide3"
+            android:text="@string/title_acquirer_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView37"
+            android:text="@string/title_affiliate_number"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView31"
+            android:text="@string/title_affiliate_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView32"
+            android:text="@string/title_representative"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView33"
+            android:text="@string/title_crn"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <FrameLayout
+            android:id="@+id/flDivide4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_divider"
+            android:layout_below="@+id/tvAddress"
+            android:background="@color/colorWhite20" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flDivide4"
+            android:text="@string/title_affiliate_tel"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView35"
+            android:text="@string/thanks"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvRawPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView27"
+            android:text="@string/won"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvTax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView28"
+            android:text="@string/won"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView29"
+            android:text="@string/won"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvApprovalNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView30"
+            android:text="00000000"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvAcquirer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView37"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info"
+            tools:text="KB card" />
+
+        <TextView
+            android:id="@+id/tvAffiliateNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView31"
+            android:text="10063423"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvAffiliateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView33"
+            android:layout_alignParentRight="true"
+            android:text="@string/affiliate_name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvRepresentativeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView33"
+            android:text="@string/company_representative"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvCorporateNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvAddress"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="128-85-17183"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvAffiliatePhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView35"
+            android:text="@string/affiliate_phone"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView34"
+            android:text="@string/company_address"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvTradeUniqueNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView21"
+            android:text="000000000000"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+        <TextView
+            android:id="@+id/tvRemainPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView25"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_receipt_info" />
+
+    </RelativeLayout>
+
+</LinearLayout>

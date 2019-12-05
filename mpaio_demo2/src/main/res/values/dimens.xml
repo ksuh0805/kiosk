@@ -1,0 +1,161 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- 인트로 -->
+
+    <fraction name="margin_top_percent_logo1">35.416%</fraction>
+    <fraction name="margin_bottom_percent_logo2">24.375%</fraction>
+
+
+
+    <!-- 바이 -->
+
+
+    <dimen name="margin_product_grid_v">12dp</dimen>
+    <dimen name="margin_product_grid_h">24.167dp</dimen>
+    <dimen name="margin_product_grid_item">4.833dp</dimen>
+    <dimen name="padding_product_item">10dp</dimen>
+    <dimen name="margin_right_product_image">9.333dp</dimen>
+
+
+    <dimen name="size_product_grid_item_qrcode">35dp</dimen>
+    <dimen name="size_product_grid_item_image">144dp</dimen>
+    <dimen name="width_product_grid_item_btn">60dp</dimen>
+    <dimen name="height_product_grid_item_btn">34dp</dimen>
+    <dimen name="spacing_product_grid_item_btn">8.667dp</dimen>
+    <dimen name="size_badge_content">7sp</dimen>
+
+    <dimen name="margin_right_badge">30dp</dimen>
+    <dimen name="margin_bottom_badge">45dp</dimen>
+
+
+    <dimen name="size_product_grid_name">18sp</dimen>
+    <dimen name="size_product_grid_price">26sp</dimen>
+
+
+    <!--<dimen name="text_margin">16dp</dimen>-->
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--<dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    -->
+
+    <!-- 카트 -->
+
+    <dimen name="padding_top_cart_content">12dp</dimen>
+    <dimen name="padding_bottom_cart_content">3.33333dp</dimen>
+    <dimen name="padding_cart_content_h">0dp</dimen>
+
+    <dimen name="height_total_layout">104dp</dimen>
+    <dimen name="height_product_list">41.333dp</dimen>
+
+    <dimen name="margin_left_product_name">16dp</dimen>
+    <dimen name="margin_right_product_btn">16dp</dimen>
+    <dimen name="width_qty">50.000dp</dimen>
+    <!--<dimen name="width_qty">34.667dp</dimen>-->
+    <dimen name="width_total">87.333dp</dimen>
+    <dimen name="width_btn">24dp</dimen>
+
+
+    <dimen name="height_header_product">42dp</dimen>
+    <dimen name="height_line">0.667dp</dimen>
+
+    <dimen name="height_divider">0.333dp</dimen>
+
+    <dimen name="size_title_total">14sp</dimen>
+    <dimen name="size_value_total">52sp</dimen>
+
+    <dimen name="size_product_item_list_text">10sp</dimen>
+    <dimen name="size_product_item_list_total">12sp</dimen>
+    <dimen name="size_product_list_header">7.333sp</dimen>
+
+    <!-- 영수증 -->
+    <dimen name="padding_receipt_content_v">12dp</dimen>
+    <dimen name="padding_receipt_content_h">0dp</dimen>
+
+    <dimen name="padding_receipt_inner_content_h">16dp</dimen>
+
+    <dimen name="height_receipt_product">54.667dp</dimen>
+    <dimen name="height_receipt_top">51.333dp</dimen>
+    <dimen name="height_receipt_total">56dp</dimen>
+
+
+    <dimen name="width_receipt_product_price">63.333dp</dimen>
+    <dimen name="width_receipt_product_number">43.333dp</dimen>
+    <dimen name="width_receipt_product_total_price">57.333dp</dimen>
+
+
+    <dimen name="size_receipt_info">12sp</dimen>
+    <dimen name="size_receipt_product">13.333sp</dimen>
+    <dimen name="size_receipt_total">13.333sp</dimen>
+
+
+    <dimen name="margin_bottom_receipt">70.6666dp</dimen>
+
+
+    <!-- 계산기 -->
+
+    <dimen name="margin_key_h">20dp</dimen>
+    <dimen name="margin_key_v">10.333dp</dimen>
+
+    <dimen name="width_calculator_price">277.333dp</dimen>
+    <dimen name="size_calculator_price">53.333sp</dimen>
+
+
+    <dimen name="margin_top_keypad">41dp</dimen>
+
+    <dimen name="height_price">103.333dp</dimen>
+
+
+    <!--   <dimen name="padding_list">10dp</dimen>-->
+
+
+    <!-- 다이얼로그 -->
+
+    <dimen name="width_dialog">280dp</dimen>
+    <dimen name="height_dialog">284dp</dimen>
+
+    <dimen name="width_dialog_content">238dp</dimen>
+    <dimen name="height_dialog_content">148dp</dimen>
+    <dimen name="height_dialog_content2">148dp</dimen>
+    <dimen name="height_dialog_title">68dp</dimen>
+    <dimen name="size_dialog_card_msg">16sp</dimen>
+    <dimen name="size_dialog_title">20sp</dimen>
+
+    <!-- 설정  -->
+
+
+    <dimen name="width_button_setting">43.333dp</dimen>
+    <dimen name="height_button_setting">18dp</dimen>
+
+    <dimen name="padding_left_setting">0dp</dimen>
+    <dimen name="padding_right_setting">0dp</dimen>
+
+    <dimen name="margin_setting_list_h">30dp</dimen>
+
+    <dimen name="height_setting_list_item">43dp</dimen>
+
+    <dimen name="size_setting_big">14sp</dimen>
+    <dimen name="size_setting_small">7.333sp</dimen>
+    <dimen name="size_setting_button">9.333sp</dimen>
+    <dimen name="margin_right_printer_state">5dp</dimen>
+    <dimen name="appbar_statusbar_margin">24dp</dimen>
+
+    <fraction name="padding_left_percent_setting">0%</fraction>
+    <fraction name="padding_right_percent_setting">0%</fraction>
+
+
+    <!--  택시 -->
+
+
+    <dimen name="width_taxi_price">150dp</dimen>
+    <dimen name="height_taxi_price">60dp</dimen>
+
+    <dimen name="size_taxi_price">20sp</dimen>
+
+
+
+
+</resources>

@@ -1,0 +1,53 @@
+<resources>
+
+
+
+
+    <!-- intro -->
+
+    <fraction name="margin_top_percent_logo1">22.8125%</fraction>
+    <fraction name="margin_bottom_percent_logo2">15.25%</fraction>
+
+    <!-- 바이 -->
+    <dimen name="margin_product_grid_v">12dp</dimen>
+    <dimen name="margin_product_grid_h">16dp</dimen>
+
+
+
+    <!-- 카트 -->
+
+    <dimen name="padding_top_cart_content">10dp</dimen>
+    <dimen name="padding_bottom_cart_content">10dp</dimen>
+
+    <dimen name="padding_cart_content_h">72dp</dimen>
+
+
+    <dimen name="margin_left_product_name">26dp</dimen>
+    <dimen name="margin_right_product_btn">26dp</dimen>
+    <dimen name="width_btn">68dp</dimen>
+    <!-- 영수증 -->
+
+    <dimen name="padding_receipt_content_v">12dp</dimen>
+    <dimen name="padding_receipt_content_h">100dp</dimen>
+
+    <dimen name="padding_receipt_inner_content_h">26dp</dimen>
+    <dimen name="height_receipt_product">60dp</dimen>
+
+
+
+    <!-- 계산기 -->
+
+
+    <dimen name="margin_top_keypad">127dp</dimen>
+
+    <fraction name="margin_left_percent_keypad">7.03125%</fraction>
+    <fraction name="margin_top_percent_keypad">15.5555%</fraction>
+    <fraction name="margin_right_percent_keypad_price">12.1875%</fraction>
+    <fraction name="margin_top_percent_keypad_price">39.4444%</fraction>
+
+    <!-- 설정  -->
+    <dimen name="padding_left_setting">94dp</dimen>
+    <dimen name="padding_right_setting">516dp</dimen>
+
+
+</resources>

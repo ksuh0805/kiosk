@@ -36,6 +36,7 @@ import butterknife.ButterKnife;
 import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.internal.util.SubscriptionList;
 import rx.schedulers.Schedulers;
@@ -193,8 +194,28 @@ public class IntroActivity extends MpaioBaseActivity {
      */
     private void requestConnection(){
 
+        mpaioManager.connect()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Void>() {
+                    @Override
+                    public void onCompleted() {
 
-      if ( connectionDialog == null ) {
+                        //dismiss();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        //tvUsbMsg.setText(e.getMessage());
+                        //tvUsbMsg.setVisibility(View.VISIBLE);
+                        logger.w(TAG, "onError : " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(Void aVoid) {
+
+                    }
+                });
+      /*if ( connectionDialog == null ) {
 
             connectionDialog = new RxConnectionDialog(IntroActivity.this, mpaioManager);
             connectionDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -209,7 +230,7 @@ public class IntroActivity extends MpaioBaseActivity {
         }
 
         if ( mState != State.CONNECTING && mState != State.CONNECTED)
-            connectionDialog.show();
+            connectionDialog.show();*/
     }
 
     private int mState = State.DISCONNECTED;

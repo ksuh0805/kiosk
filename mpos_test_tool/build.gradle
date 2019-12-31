@@ -19,7 +19,7 @@ android {
         ReleaseConfig {
             keyAlias 'paymgate_test_tool'
             keyPassword 'ejsystem'
-            storeFile file('C:/Users/pc/Desktop/SDKAndroid.master/ejsystem.keystore')
+//            storeFile file('C:/Users/pc/Desktop/SDKAndroid.master/ejsystem.keystore')
             storePassword 'ejsystem'
         }
     }

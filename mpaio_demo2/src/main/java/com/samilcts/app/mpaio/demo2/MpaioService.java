@@ -1,4 +1,4 @@
-package com.samilcts.mpaio.testtool;
+package com.samilcts.app.mpaio.demo2;
 
 
 import android.app.Service;
@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.samilcts.mpaio.testtool.util.AppTool;
+import com.samilcts.app.mpaio.demo2.util.AppTool;
 import com.samilcts.sdk.mpaio.command.MpaioCommand;
 import com.samilcts.sdk.mpaio.ext.nice.MpaioNiceManager;
 import com.samilcts.util.android.Logger;
@@ -40,6 +40,10 @@ public class MpaioService extends Service {
                     (byte)0xc1, (byte)0xbc, (byte)0x47, (byte)0xfc, (byte)0xdc, (byte)0xe6, (byte)0xea, (byte)0x39}, 0, key3, 0, 16);
         }
 
+    }
+
+    synchronized public void setmDeviceManager(MpaioNiceManager manager){
+        mDeviceManager = manager;
     }
 
     synchronized public MpaioNiceManager getDeviceManager() {

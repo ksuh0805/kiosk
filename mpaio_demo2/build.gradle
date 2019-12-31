@@ -15,7 +15,7 @@ android {
         release {
             keyAlias 'paymgate_demo2'
             keyPassword 'ejsystem'
-            storeFile file('C:/Users/pc/Desktop/SDKAndroid.master/ejsystem.keystore')
+//            storeFile file('C:/Users/pc/Desktop/SDKAndroid.master/ejsystem.keystore')
             storePassword 'ejsystem'
         }
     }
@@ -112,6 +112,7 @@ dependencies {
     //implementation project(':media')
     implementation project(':mPrinter')
     implementation project(':mpaio_ext_dialogs')
+    implementation project(':mpaio_ext_nice')
     implementation project(':mpaio_sdk')
     implementation project(':util')
     implementation project(':dialogs')

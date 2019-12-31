@@ -109,6 +109,10 @@
                 android:value=".BuyActivity" />
         </activity>
 
+        <service
+            android:name=".MpaioService"
+            android:enabled="true" >
+        </service>
 
         <meta-data
             android:name="io.fabric.ApiKey"

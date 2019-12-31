@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.johnkil.android-robototextview:robototextview:4.0.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5f8b5b067991f9745387311dcc2bd95/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15bbb0373a1ff93d9bccfe6ea1427040/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5f8b5b067991f9745387311dcc2bd95/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5f8b5b067991f9745387311dcc2bd95/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15bbb0373a1ff93d9bccfe6ea1427040/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/15bbb0373a1ff93d9bccfe6ea1427040/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

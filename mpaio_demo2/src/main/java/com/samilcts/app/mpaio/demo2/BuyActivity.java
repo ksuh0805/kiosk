@@ -130,7 +130,8 @@ public class BuyActivity extends MpaioBaseActivity {
 
       //  Log.i(TAG, "c size : " + cartItems.size());
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getBaseContext(), productColumn);
+        //GridLayoutManager gridLayoutManager = new GridLayoutManager(getBaseContext(), productColumn);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getBaseContext(), 2);
 
 
 

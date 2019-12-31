@@ -8,48 +8,48 @@
     android:background="@android:color/white">
 
     <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/spinner"
         android:layout_width="@dimen/width_product_grid_item_btn"
         android:layout_height="@dimen/height_product_grid_item_btn"
-        android:id="@+id/spinner"
-        android:spinnerMode="dropdown"
-        android:entries="@array/numbers"
+        android:layout_alignBottom="@id/ivBarcode"
+        android:layout_toRightOf="@id/ivBarcode"
 
-        android:layout_alignBottom="@+id/image"
+        android:entries="@array/numbers"
+        android:spinnerMode="dropdown"
         android:textAlignment="viewStart"
-        android:layout_toRightOf="@+id/image"
         android:theme="@style/MySpinnerThemeDark" />
 
     <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="@dimen/width_product_grid_item_btn"
         android:layout_height="@dimen/height_product_grid_item_btn"
-        android:id="@+id/imageButton"
-        android:scaleType="fitCenter"
-        android:layout_toRightOf="@+id/spinner"
-        android:layout_alignBottom="@+id/image"
+        android:layout_alignBottom="@id/ivBarcode"
         android:layout_marginLeft="@dimen/spacing_product_grid_item_btn"
+        android:layout_toRightOf="@+id/spinner"
+        android:background="@null"
         android:focusableInTouchMode="false"
-        android:src="@drawable/btn_add_cart"
-        android:background="@null" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/btn_add_cart" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/image"
         android:layout_above="@+id/price"
-        android:layout_alignTop="@+id/image">
+        android:layout_alignTop="@id/ivBarcode"
+        android:layout_toRightOf="@id/ivBarcode">
 
         <com.devspark.robototextview.widget.RobotoTextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?attr/textAppearanceListItem"
-            android:text="Galaxy Note 5"
-            android:textSize="@dimen/size_product_grid_name"
-            android:textColor="@color/colorProductName"
-            app:robotoFontFamily="roboto"
-            app:robotoTextWeight="medium"
+            android:ellipsize="end"
             android:maxLines="3"
-            android:ellipsize="end" />
+            android:text="Galaxy Note 5"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/colorProductName"
+            android:textSize="@dimen/size_product_grid_name"
+            app:robotoFontFamily="roboto"
+            app:robotoTextWeight="medium" />
 
     </FrameLayout>
 
@@ -57,13 +57,13 @@
         android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceListItem"
         android:layout_above="@+id/spinner"
+        android:layout_toRightOf="@id/ivBarcode"
         android:text="$200"
+        android:textAppearance="?attr/textAppearanceListItem"
         android:textSize="@dimen/size_product_grid_price"
         app:robotoFontFamily="roboto"
-        app:robotoTextWeight="medium"
-        android:layout_toRightOf="@+id/image" />
+        app:robotoTextWeight="medium" />
 
     <ImageView
         android:layout_width="144dp"
@@ -75,14 +75,15 @@
         android:layout_alignParentStart="true" />
 
     <ImageView
+        android:id="@+id/ivBarcode"
         android:layout_width="@dimen/size_product_grid_item_qrcode"
         android:layout_height="@dimen/size_product_grid_item_qrcode"
-        android:id="@+id/ivBarcode"
-        android:scaleType="fitCenter"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/image"
         android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
         android:background="@color/colorWhite"
+        android:paddingRight="5dp"
         android:paddingBottom="5dp"
-        android:paddingRight="5dp" />
+        android:scaleType="fitCenter" />
 
 </RelativeLayout>

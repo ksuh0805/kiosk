@@ -1,9 +1,14 @@
 package com.samilcts.app.mpaio.demo2;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
 import com.samilcts.media.State;
 import com.samilcts.sdk.mpaio.MpaioManager;
+import com.samilcts.sdk.mpaio.ext.nice.MpaioNiceManager;
 import com.samilcts.util.android.ToastUtil;
 
 import rx.Subscriber;
@@ -19,8 +24,8 @@ public abstract class MpaioBaseActivity extends BaseActivity {
 
     private static boolean isConnected = false;
 
-    protected static MpaioManager mpaioManager;
-
+    protected static MpaioNiceManager mpaioManager;
+    protected MpaioService mpaioService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,37 +33,57 @@ public abstract class MpaioBaseActivity extends BaseActivity {
 
         mActivity = this;
 
-        if ( null ==  SharedInstance.mpaioManager) {
+        if (null == SharedInstance.mpaioManager) {
             logger.i(TAG, "new manager : ");
 
-            mpaioManager = new MpaioManager(getApplicationContext());
+            mpaioManager = new MpaioNiceManager(getApplicationContext());
             SharedInstance.mpaioManager = mpaioManager;
 
             mpaioManager.onStateChanged()
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Subscriber<State>() {
-                @Override
-                public void onCompleted() {
+                        @Override
+                        public void onCompleted() {
 
-                }
+                        }
 
-                @Override
-                public void onError(Throwable e) {
+                        @Override
+                        public void onError(Throwable e) {
 
-                }
+                        }
 
-                @Override
-                public void onNext(State state) {
-                    logger.i(TAG, "state : " + state.getValue());
-                    onStateChanged(state.getValue());
-                }
-            });
+                        @Override
+                        public void onNext(State state) {
+                            logger.i(TAG, "state : " + state.getValue());
+                            onStateChanged(state.getValue());
+                        }
+                    });
         }
 
-
-
+        Intent deviceServiceIntent = new Intent(this, MpaioService.class);
+        startService(deviceServiceIntent);
+        bindService(deviceServiceIntent, mpaioServiceConnection, BIND_AUTO_CREATE);
     }
 
+    private final ServiceConnection mpaioServiceConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mpaioService = null;
+        }
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+
+            logger.i(TAG, "mDeviceServiceConnection");
+            mpaioService = ((MpaioService.LocalBinder) service).getService();
+            mpaioService.setmDeviceManager(mpaioManager);
+            //mpaioManager = mpaioService.getDeviceManager();
+
+            //SeqMutualAuthentication();
+            //BaseMpaioServiceActivity.this.onServiceConnected(mpaioService);
+        }
+    };
 
     protected void onStateChanged(int state) {
 

@@ -1,11 +1,17 @@
 package com.samilcts.app.mpaio.demo2;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Looper;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -18,6 +24,7 @@ import com.samilcts.app.mpaio.demo2.util.DefaultParser;
 import com.samilcts.app.mpaio.demo2.util.PaymgateUtil;
 import com.samilcts.receipt.nice.ReceiptParser;
 import com.samilcts.receipt.nice.data.ReceiptInfo;
+import com.samilcts.sdk.mpaio.callback.ResultCallback;
 import com.samilcts.sdk.mpaio.command.MpaioCommand;
 import com.samilcts.sdk.mpaio.error.ResponseError;
 import com.samilcts.sdk.mpaio.message.MpaioMessage;
@@ -25,10 +32,29 @@ import com.samilcts.ui.dialogs.PayDialog;
 import com.samilcts.ui.dialogs.PinReceiveDialog;
 import com.samilcts.ui.dialogs.SignDialog;
 import com.samilcts.util.android.Logger;
+import com.samilcts.util.android.ToastUtil;
+import com.samilcts.receipt.nice.ReceiptParser;
+import com.samilcts.receipt.nice.data.ReceiptInfo;
+import com.samilcts.sdk.mpaio.callback.ResultCallback;
+import com.samilcts.sdk.mpaio.ext.dialog.RxConnectionDialog;
+import com.samilcts.sdk.mpaio.ext.nice.MpaioNiceManager;
+import com.samilcts.sdk.mpaio.ext.nice.payment.PaymentError;
+import com.samilcts.sdk.mpaio.ext.nice.payment.PaymentListener;
+import com.samilcts.sdk.mpaio.ext.nice.payment.ReadType;
+import com.samilcts.sdk.mpaio.message.MpaioMessage;
+import com.samilcts.ui.dialogs.PinDialog;
+import com.samilcts.ui.dialogs.SignDialog;
+import com.samilcts.util.android.Converter;
+import com.samilcts.util.android.Logger;
+import com.samilcts.util.android.Preference;
+import com.samilcts.util.android.ToastUtil;
+
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import io.paperdb.Paper;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -55,6 +81,7 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
         super.onCreate(savedInstanceState);
 
         mContext = this;
+
     }
 
     @Override
@@ -62,6 +89,8 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
         super.onStart();
 
         coordinatorLayout  = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
+        logger.i("TAG", "onStart on PayDemoSequenceActivity");
+
     }
 
 
@@ -383,11 +412,11 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
                             } else if ( command.equals(MpaioCommand.NOTIFY_READ_EMV_CARD)) {
                                 logger.i(TAG,"NOTIFY_READ_EMV_CARD");
                                 cardInfo = parser.parseEMVCardData(data);
-                                PaymgateUtil.justSendStop(mpaioManager);
+                                /*PaymgateUtil.justSendStop(mpaioManager);
                                 PaymgateUtil.requestOk(mpaioManager, MpaioCommand.READ_PIN_PAD, null)
                                         .retry(3)
                                         .delaySubscription(100, TimeUnit.MILLISECONDS)
-                                        .subscribe(PaymgateUtil.getEmptySubscriber());
+                                        .subscribe(PaymgateUtil.getEmptySubscriber());*/
 
                                 rx.Observable.timer(500, TimeUnit.MILLISECONDS)
                                         .doOnCompleted(new Action0() {
@@ -395,7 +424,7 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
                                             public void call() {
                                                 dismissAll();
                                                 logger.i(TAG,"READ_PIN_PAD req");
-                                                showPinDialog();
+                                                //showPinDialog();
                                             }
                                         })
                                         .subscribe();
@@ -577,5 +606,327 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
 
     }
 
+
+    protected void SeqMutualAuthentication(){
+        mpaioService.setKey(1);
+        //btnSendCommand.setEnabled(false);
+
+        final Subscription subscription = mpaioManager.onPaymentReady()
+                .take(1)
+                .subscribe(new Subscriber<MpaioMessage>() {
+                    @Override
+                    public void onCompleted() {
+                        onScenarioEnd();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        logger.i(TAG,"PayReady " + e);
+                    }
+
+                    @Override
+                    public void onNext(MpaioMessage mpaioMessage) {
+                    }
+                });
+
+
+        mpaioManager.authenticate(new ResultCallback() {
+            @Override
+            public void onCompleted(final boolean isSuccess) {
+
+                if ( !isSuccess){
+
+                    subscription.unsubscribe();
+                    logger.i(TAG, "auth fail");
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //btnSendCommand.setEnabled(true);
+                        }
+                    });
+
+                    ToastUtil.show(getApplicationContext(), "Auth Fail");
+                } else {
+
+                    logger.i(TAG, "auth ok");
+                    ToastUtil.show(getApplicationContext(), "Auth Success");
+                }
+            }
+        });
+    }
+
+    protected void SeqPayWithNiceVan(long price){
+        mpaioService.setKey(1);
+        String paramStr = "31 10 00 0 27 "+ String.valueOf(price);
+        final String[] params = paramStr.split(" ");
+
+        if ( params.length != 6) {
+            ToastUtil.show(mContext, "hint scenario parameter");
+            return;
+        }
+
+        final ReadType readType = new ReadType(Integer.parseInt(params[0]));
+
+
+        mpaioManager.useRealVanServer(false);
+
+        runAfterPayReady(new Runnable() {
+            @Override
+            public void run() {
+
+                Paper.init(mContext);
+                Paper.book().write(AppTool.KEY_REVOKE_READ_TYPE, (readType.getValue() & 0xFF));
+
+                mpaioManager.startPayment(readType, params[1], params[2], params[3], params[4], params[5], paymentListener);
+
+            }
+        });
+    }
+
+    protected void SeqRevokeWithNiceVan(){
+
+        mpaioService.setKey(1);
+        String paramStr = Paper.book().read(AppTool.KEY_REVOKE);
+        final String[] params = paramStr.split(" ");
+
+        if (params.length != 9) {
+
+            ToastUtil.show(mContext, "hint scenario parameter");
+            return;
+        }
+
+        if ((params[1].equals("25") || params[1].equals("21")) && params[8].length() < 12) {
+            params[8] += "            ".substring(params[8].length());
+        }
+
+        final ReadType readType = new ReadType(Integer.parseInt(params[0]));
+
+        mpaioManager.useRealVanServer(false);
+        runAfterPayReady(new Runnable() {
+            @Override
+            public void run() {
+                mpaioManager.revokePayment(readType, params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8], paymentListener);
+            }
+        });
+    }
+
+
+    /**
+     *
+     * @param runnable run is called after auth, payment ready.
+     */
+    private void runAfterPayReady(final Runnable runnable) {
+        //btnSendCommand.setEnabled(false);
+
+        final Subscription subscription = mpaioManager.onPaymentReady()
+                .take(1)
+                .delay(200, TimeUnit.MILLISECONDS)
+                .subscribe(new Subscriber<MpaioMessage>() {
+                    @Override
+                    public void onCompleted() {
+
+                        logger.i(TAG, "onPaymentReady");
+
+                        runnable.run();
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //btnSendCommand.setEnabled(true);
+                            }
+                        });
+                        //Output.printError(mRvLog,"PayReady", e);
+                        //addText("MSG",new byte[0], "ready error : " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(MpaioMessage mpaioMessage) {
+                        //printText("MSG",new byte[0], "onPaymentReady");
+                    }
+                });
+
+        mpaioManager.authenticate(new ResultCallback() {
+            @Override
+            public void onCompleted(boolean isSuccess) {
+
+                if ( isSuccess) {
+
+                    //printText("MSG",new byte[0], "authentication success");
+
+                } else {
+
+                    subscription.unsubscribe();
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //btnSendCommand.setEnabled(true);
+                        }
+                    });
+                    //printText("MSG",new byte[0], "authentication fail");
+                }
+
+            }
+        });
+    }
+
+    private void onScenarioEnd() {
+
+        final boolean isAutoResend = Preference.getInstance(mContext).get("useAutoReSendCommand", false);
+        int time = isAutoResend ? 1000 : 0;
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                //if ( !isAutoResend) btnSendCommand.setEnabled(true);
+                //else if( !stopResend) btnSendCommand.performClick();
+                //else btnSendCommand.setEnabled(true);
+            }
+        }, time);
+
+
+    }
+
+    private final PaymentListener paymentListener = new PaymentListener() {
+
+        @Override
+        public void onPayStarted() {
+
+            logger.i(TAG, new byte[0] + "payment started");
+        }
+
+        @Override
+        public void onSignatureRequested() {
+
+            logger.i(TAG, new byte[0] + "signature requested");
+
+
+            showSignDialog();
+/*
+            try {
+                // get input stream
+                InputStream is = mContext.getAssets().open("test_sign2.png");
+                Bitmap bitmap = BitmapFactory.decodeStream(is);
+                ToastUtil.show(mContext, "write test test_sign2.png");
+                mNiceDeviceManager.completeSignature(bitmap);
+                printText("MSG",new byte[0], "write test signature");
+            } catch (IOException ex) {
+                ToastUtil.show(mContext, "fail to read sample sing bmp");
+            }*/
+        }
+
+
+        @Override
+        public void onPinRequested() {
+
+            showPinDialog();
+
+        }
+
+        @Override
+        public void onPinDelivered() {
+
+        }
+
+        @Override
+        public void onStateNotification(byte[] data) {
+            logger.i(TAG,new byte[0] + "state notification");
+            //ToastUtil.show(mContext, "Complete Card Reading ");
+        }
+
+        @Override
+        public void onComplete(byte[] data) {
+
+
+            onScenarioEnd();
+
+            try {
+                ReceiptInfo info = new ReceiptParser(getApplicationContext()).parse(data);
+
+
+                if ( checkSuccess(info)) {
+
+                    if (ReceiptInfo.TYPE_NICE_PAY == info.type) {
+                        Paper.init(getApplicationContext());
+                        Paper.init(mContext);
+
+                        int readType = Paper.book().read(AppTool.KEY_REVOKE_READ_TYPE);
+
+                        String tradeType = info.niceReceipt.issuerCode.equals("70") ? "21" : "30";
+                        String tradeNumber = info.niceReceipt.issuerCode.equals("70") ? "CASH1" : info.niceReceipt.tradeUniqueNumber;
+                        String approvalDate = info.niceReceipt.approvalDate.replaceAll("[/: ]", "").substring(0, 6);
+
+                        String revokeParam = String.format(Locale.getDefault(), "%d %s %s %s %s %s %s %s %s",
+                                readType, tradeType, info.niceReceipt.installmentMonth,
+                                info.niceReceipt.serviceCharge, info.niceReceipt.tax, info.niceReceipt.totalPrice
+                                , info.niceReceipt.approvalNumber.trim(), approvalDate, tradeNumber);
+                        Paper.book().write(AppTool.KEY_REVOKE, revokeParam);
+                    }
+                }
+
+                String text = "";
+
+                if (  info.type <= ReceiptInfo.TYPE_NICE_CANCEL) {
+                    text = "[Complete Payment]"
+                            //   + raw
+                            + "\nResponse code : " + info.niceReceipt.responseCode
+                            +"\nApproval number : " + info.niceReceipt.approvalNumber
+                            +"\nApproval approvalDate : " + info.niceReceipt.approvalDate
+                            +"\nApproval tradeUniqueNumber : " + info.niceReceipt.tradeUniqueNumber
+                    ;
+                }
+
+                logger.i(TAG,new byte[0] + text);
+
+            } catch (Exception e) {
+
+                logger.i(TAG, "parse " + e);
+            }
+
+            ToastUtil.show(mContext, "payment completed");
+        }
+
+
+        @Override
+        public void onSignatureDelivered() {
+
+            logger.i(TAG ,new byte[0] + "sign delivered");
+        }
+
+        @Override
+        public void onError(PaymentError error) {
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    //btnSendCommand.setEnabled(true);
+                }
+            });
+
+            logger.i(TAG, "error" + error.name());
+            ToastUtil.show(mContext, "error : " + error.name());
+        }
+    };
+
+    private boolean checkSuccess(final ReceiptInfo info) {
+
+        if ( (ReceiptInfo.TYPE_TMONEY_PAY == info.type || ReceiptInfo.TYPE_TMONEY_CANCEL == info.type  || ReceiptInfo.TYPE_PREPAID_RECHARGE == info.type) ) {
+
+            return info.tmoneyReceipt.responseCode.equals("0000");
+
+        } /*else if ( (ReceiptInfo.TYPE_CASHBEE_PAY == info.type || ReceiptInfo.TYPE_CASHBEE_CANCEL == info.type )
+                && !info.cashbeeReceipt.responseCode.equals("0000") ){
+            message = "캐시비 실패";
+
+        } */ else if ( info.niceReceipt.responseCode.equals("0000") ) {
+
+            return true;
+        }
+
+        return false;
+    }
 
 }

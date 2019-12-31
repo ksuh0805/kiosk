@@ -75,7 +75,6 @@ public class CartActivity extends PayDemoSequenceActivity {
         if ( PaymgateUtil.isConnected(mpaioManager) )
             PaymgateUtil.justSend(mpaioManager, MpaioCommand.STOP, new byte[0] );
 
-
     }
 
     private void init() {
@@ -283,7 +282,8 @@ public class CartActivity extends PayDemoSequenceActivity {
         if ( mCartItems.size() > 0 ) {
 
             long price = Long.parseLong(total.getText().toString().replaceAll("[^0-9.]+", ""));
-            startPaySequence(price);
+            //startPaySequence(price);
+            SeqPayWithNiceVan(price);
 
         } else {
 

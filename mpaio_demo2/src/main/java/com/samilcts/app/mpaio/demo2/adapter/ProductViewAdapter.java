@@ -183,8 +183,8 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
             option.put(EncodeHintType.DATA_MATRIX_SHAPE, SymbolShapeHint.FORCE_RECTANGLE);
             try {
 
-                final int WIDTH = 50;
-                final int HEIGHT = 50;
+                final int WIDTH = 200;
+                final int HEIGHT = 200;
 
                 BitMatrix bytemap = writer.encode(code, BarcodeFormat.QR_CODE, WIDTH, HEIGHT, option);
 
@@ -197,9 +197,9 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
                     }
                 }
 
-                File file = new File(AppTool.localPath+"/"+QRVersion+"_"+code+".png");
-                out = new FileOutputStream(file);
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+                //File file = new File(AppTool.localPath+"/"+QRVersion+"_"+code+".png");
+                //out = new FileOutputStream(file);
+                //bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
 
             } catch (Exception e) {
                 e.printStackTrace();

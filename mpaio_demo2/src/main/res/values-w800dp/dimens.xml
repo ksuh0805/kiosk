@@ -20,8 +20,8 @@
     <dimen name="padding_product_item">12dp</dimen>
     <dimen name="margin_right_product_image">8dp</dimen>
 
-    <dimen name="size_product_grid_item_qrcode">70dp</dimen>
-    <dimen name="size_product_grid_item_image">144dp</dimen>
+    <dimen name="size_product_grid_item_qrcode">200dp</dimen>
+    <dimen name="size_product_grid_item_image">400dp</dimen>
     <dimen name="width_product_grid_item_btn">60dp</dimen>
     <dimen name="height_product_grid_item_btn">34dp</dimen>
     <dimen name="spacing_product_grid_item_btn">6dp</dimen>

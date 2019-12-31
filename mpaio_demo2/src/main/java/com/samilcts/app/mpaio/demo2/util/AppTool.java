@@ -64,7 +64,8 @@ public class AppTool {
     public static final String KEY_REVOKE_TOTAL = "key.revoke.total";
     public static final String KEY_REVOKE_INSTALMENT_MONTH = "key.revoke.installment.month";
     public static final String KEY_REVOKE_TYPE = "key.revoke.type";
-
+    public static final String KEY_REVOKE = "key.revoke.receipt.nice";
+    public static final String KEY_REVOKE_READ_TYPE = "key.revoke.read.type";
 
 
     public static List<BluetoothDevice> getPairedPrinters(Context context, Printer.Model model){

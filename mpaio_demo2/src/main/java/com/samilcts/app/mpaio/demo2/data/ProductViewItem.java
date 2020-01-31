@@ -10,6 +10,7 @@ public class ProductViewItem implements Serializable {
 
 
     private Product product;
+    private DemoProduct demoProduct;
 
     public int getAmount() {
         return amount;
@@ -18,6 +19,7 @@ public class ProductViewItem implements Serializable {
     public Product getProduct() {
         return product;
     }
+    public DemoProduct getDemoProduct() {return  demoProduct;}
 
     private int amount;
 
@@ -29,6 +31,12 @@ public class ProductViewItem implements Serializable {
     public ProductViewItem(Product product, int amount) {
 
         this.product = product;
+        this.amount = amount;
+
+    }
+    public ProductViewItem(DemoProduct demoproduct, int amount) {
+
+        this.demoProduct = demoproduct;
         this.amount = amount;
 
     }

@@ -16,6 +16,7 @@
 
 package com.samilcts.app.mpaio.demo2.adapter;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -29,12 +30,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.datamatrix.encoder.SymbolShapeHint;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.samilcts.app.mpaio.demo2.R;
+import com.samilcts.app.mpaio.demo2.data.DemoProduct;
 import com.samilcts.app.mpaio.demo2.data.Product;
 import com.samilcts.app.mpaio.demo2.data.ProductViewItem;
 import com.samilcts.app.mpaio.demo2.util.AppTool;
@@ -123,12 +126,10 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
             tvPrice.setText(text);
         }
 
-        public void setImage(final int imageRes) {
+        public void setImage(final String img) {
 
-            image.setImageResource(imageRes);
-
-
-
+            String imgRes = "http://52.78.164.68/uploads/"+img;
+            Glide.with(image.getContext()).load(imgRes).into(image);
         }
 
         private static final int QRVersion = 4;
@@ -299,20 +300,21 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
         ProductViewItem productViewItem = productViewItems.get(position);
 
-        Product product = productViewItem.getProduct();
+        //Product product = productViewItem.getProduct();
+        DemoProduct demoProduct = productViewItem.getDemoProduct();
 
-        viewHolder.setTvName(product.getName());
+        viewHolder.setTvName(demoProduct.getProductName());
 
         if ( needTotal ) {
-            viewHolder.setTvPrice(mNumberFormat.format(product.getPrice() * productViewItem.getAmount()));
+            viewHolder.setTvPrice(mNumberFormat.format(demoProduct.getPrice() * productViewItem.getAmount()));
 
         } else {
-            viewHolder.setTvPrice(mNumberFormat.format(product.getPrice()));
-            viewHolder.setBarcode(product.getBarcode());
+            viewHolder.setTvPrice(mNumberFormat.format(demoProduct.getPrice()));
+            viewHolder.setBarcode(demoProduct.getQr());
         }
 
 
-        viewHolder.setImage(product.getImageRes());
+        viewHolder.setImage(demoProduct.getImg());
         viewHolder.setAmount(productViewItem.getAmount());
         viewHolder.setTag(position);
         viewHolder.setClickListener(mOnButtonClickListener);

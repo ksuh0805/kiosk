@@ -172,11 +172,11 @@ public class KeyPadActivity extends ExtPayVanSequenceActivity {
             else if(  ReceiptInfo.TYPE_PREPAID_REFUND == info.type) product = getString(R.string.balance_refund);
             else if(  ReceiptInfo.TYPE_PREPAID_PURCHASE == info.type) product = getString(R.string.balance_pay);
 
-            cartItems.put(new Product(product, R.drawable.btn_close, _price, ""), 1);
+            cartItems.put(new Product(product, "btn_close", _price, ""), 1);
 
         } else {
             i = new Intent(getBaseContext(), MsIcReceiptActivity.class);
-            cartItems.put(new Product("Service", R.drawable.btn_close, _price, ""), 1);
+            cartItems.put(new Product("Service", "btn_close", _price, ""), 1);
         }
 
         i.putExtra(CartActivity.EXTRA_RECEIPT_INFO, info);

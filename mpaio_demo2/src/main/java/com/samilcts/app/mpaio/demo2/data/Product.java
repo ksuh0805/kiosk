@@ -11,6 +11,7 @@ public class Product implements Serializable {
     private int productNum;
     private String name;
     private String img;
+    private int imgRes;
     private double price;
     private String barcode;
 
@@ -26,6 +27,7 @@ public class Product implements Serializable {
     public double getPrice() {
         return price;
     }
+    public int getImgRes() {return imgRes;}
 
     public void setProductNum(int productNum) {
         this.productNum = productNum;
@@ -47,6 +49,13 @@ public class Product implements Serializable {
 
         this.name = name;
         this.img = img;
+        this.price = price;
+        this.barcode = barcode;
+    }
+    public Product(String name, int imgRes, double price, String barcode) {
+
+        this.name = name;
+        this.imgRes = imgRes;
         this.price = price;
         this.barcode = barcode;
     }

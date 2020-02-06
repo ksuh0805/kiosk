@@ -130,6 +130,9 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
             String imgRes = "http://52.78.164.68/uploads/"+img;
             Glide.with(image.getContext()).load(imgRes).into(image);
         }
+        public void setImage(final int imgRes) {
+            image.setImageResource(imgRes);
+        }
 
         private static final int QRVersion = 4;
 
@@ -311,8 +314,11 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
             viewHolder.setBarcode(product.getBarcode());
         }
 
-
-        viewHolder.setImage(product.getImg());
+        if(product.getImg() == null){
+            viewHolder.setImage(product.getImgRes());
+        }else{
+            viewHolder.setImage(product.getImg());
+        }
         viewHolder.setAmount(productViewItem.getAmount());
         viewHolder.setTag(position);
         viewHolder.setClickListener(mOnButtonClickListener);

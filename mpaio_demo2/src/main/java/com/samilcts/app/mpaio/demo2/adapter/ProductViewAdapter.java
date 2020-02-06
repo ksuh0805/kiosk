@@ -37,7 +37,6 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.datamatrix.encoder.SymbolShapeHint;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.samilcts.app.mpaio.demo2.R;
-import com.samilcts.app.mpaio.demo2.data.DemoProduct;
 import com.samilcts.app.mpaio.demo2.data.Product;
 import com.samilcts.app.mpaio.demo2.data.ProductViewItem;
 import com.samilcts.app.mpaio.demo2.util.AppTool;
@@ -300,21 +299,20 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
         ProductViewItem productViewItem = productViewItems.get(position);
 
-        //Product product = productViewItem.getProduct();
-        DemoProduct demoProduct = productViewItem.getDemoProduct();
+        Product product = productViewItem.getProduct();
 
-        viewHolder.setTvName(demoProduct.getProductName());
+        viewHolder.setTvName(product.getName());
 
         if ( needTotal ) {
-            viewHolder.setTvPrice(mNumberFormat.format(demoProduct.getPrice() * productViewItem.getAmount()));
+            viewHolder.setTvPrice(mNumberFormat.format(product.getPrice() * productViewItem.getAmount()));
 
         } else {
-            viewHolder.setTvPrice(mNumberFormat.format(demoProduct.getPrice()));
-            viewHolder.setBarcode(demoProduct.getQr());
+            viewHolder.setTvPrice(mNumberFormat.format(product.getPrice()));
+            viewHolder.setBarcode(product.getBarcode());
         }
 
 
-        viewHolder.setImage(demoProduct.getImg());
+        viewHolder.setImage(product.getImg());
         viewHolder.setAmount(productViewItem.getAmount());
         viewHolder.setTag(position);
         viewHolder.setClickListener(mOnButtonClickListener);

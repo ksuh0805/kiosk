@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class SampleProduct {
 
-    ArrayList<DemoProduct> demoProductArray = new ArrayList<>();
+    ArrayList<Product> sampleProductArray = new ArrayList<>();
 
     public void request(String urlStr){
         String output = "";
@@ -27,19 +27,18 @@ public class SampleProduct {
             Log.d("view", String.valueOf(url));
 
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-            Log.d("view", String.valueOf(url));
+
             if(conn != null){
                 conn.setConnectTimeout(10000);
                 conn.setRequestMethod("GET");
                 conn.setDoInput(true);
-                Log.d("vieew", String.valueOf(conn));
 
                 int resCode = conn.getResponseCode();
-                Log.d("rescode", String.valueOf(resCode));
+                Log.d("product rescode", String.valueOf(resCode));
                 BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                Log.d("view", String.valueOf(url));
+
                 String line = null;
-                Log.d("view", String.valueOf(url));
+
                 while (true) {
                     line = reader.readLine();
                     if (line == null) {
@@ -56,21 +55,21 @@ public class SampleProduct {
 
             JSONObject Object = jsonObject.getJSONObject(0);
 
-            DemoProduct demoProducts = new DemoProduct();
+            Product Products = new Product();
 
-            demoProducts.setProductNum(Object.getInt("P_num"));
-            demoProducts.setProductName(Object.getString("상품명"));
-            demoProducts.setPrice(Object.getInt("가격"));
-            demoProducts.setImg(Object.getString("이미지"));
-            demoProducts.setQr(Object.getString("qr"));
+            Products.setProductNum(Object.getInt("P_num"));
+            Products.setProductName(Object.getString("상품명"));
+            Products.setPrice(Object.getInt("가격"));
+            Products.setImg(Object.getString("이미지"));
+            Products.setBarcode(Object.getString("qr"));
 
-            demoProductArray.add(demoProducts); // product 추가
+            sampleProductArray.add(Products); // product 추가
         } catch (Exception ex) {
             Log.d("SampleProductError", "예외 발생 : " + ex.toString());
         }
     }
 
-    public ArrayList<DemoProduct> getDemoProduct(SampleScenario scenario){ //웹서버로부터 상품정보 가져오기
+    public ArrayList<Product> getDemoProduct(SampleScenario scenario){ //웹서버로부터 상품정보 가져오기
 
         scenario.getDemoScenario();
         ArrayList pnum = scenario.Matching();
@@ -91,7 +90,7 @@ public class SampleProduct {
                 // TODO: handle exception
             }
         }
-        return demoProductArray;
+        return sampleProductArray;
     }
 
 
@@ -106,18 +105,18 @@ public class SampleProduct {
 
         SampleScenario sampleScenario = new SampleScenario();
         SampleProduct sampleProduct = new SampleProduct();
-        ArrayList<DemoProduct> ProductArray = sampleProduct.getDemoProduct(sampleScenario);
-        Log.d("watchhhh", sampleProduct.demoProductArray.get(0).getProductName());
+        ArrayList<Product> ProductArray = sampleProduct.getDemoProduct(sampleScenario);
+        Log.d("watchhhh", sampleProduct.sampleProductArray.get(0).getName());
 
-        for(int i=0 ; i<ProductArray.size(); i++){
-            DemoProduct demop = (DemoProduct) (ProductArray.get(i));
+        for(int i=0 ; i<ProductArray.size(); i++){ // 0 아닌 숫자로 세팅된 product number 리스트
+            Product demop = (Product) (ProductArray.get(i));
 
-            String pname = demop.getProductName();
-            int price = demop.getPrice();
+            String pname = demop.getName();
+            double price = demop.getPrice();
             String img = demop.getImg();
-            String qr = demop.getQr();
+            String barcode = demop.getBarcode();
 
-            watchList.add(makeProductViewItem_sample(pname, img, price, qr));
+            watchList.add(makeProductViewItem(pname, img, price, barcode));
         }
 
        // watchList.add(makeProductViewItem("this product name for test of long long name print, display 12335145bsdfbsdf DSf xc SDf zdsf FsdvfdsffEND ", R.drawable.w_lg_watch_r, 225));
@@ -153,7 +152,7 @@ public class SampleProduct {
         return watchList;
     }
 
-    private static ProductViewItem makeProductViewItem(String name, int imageRes ,double price, String code ){
+    private static ProductViewItem makeProductViewItem(String name, String imageRes ,double price, String code ){
 
         if(code==null) {
             code = "DEFAULT_BARCODE_DATA_###########";
@@ -166,21 +165,6 @@ public class SampleProduct {
         }
 
         return new ProductViewItem(new Product(name, imageRes ,price, code), 1);
-    }
-
-    private static ProductViewItem makeProductViewItem_sample(String name, String img, int price, String qr){
-
-        if(qr==null) {
-            qr = "DEFAULT_BARCODE_DATA_###########";
-            try {
-                byte[] data = MessageDigest.getInstance("MD5").digest(name.getBytes());
-                qr = Converter.toHexString(data).replaceAll(" ", "");
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return new ProductViewItem(new DemoProduct(name,img, price, qr), 1);
     }
 }
 

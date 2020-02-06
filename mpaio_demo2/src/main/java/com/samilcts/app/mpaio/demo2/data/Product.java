@@ -8,36 +8,48 @@ import java.io.Serializable;
  */
 public class Product implements Serializable {
 
+    private int productNum;
+    private String name;
+    private String img;
+    private double price;
+    private String barcode;
 
     public String getName() {
         return name;
     }
-
-    private String name;
-
-    private int imageRes;
-    private double price;
-
     public String getBarcode() {
         return barcode;
     }
-
-    private String barcode;
-
-    public int getImageRes() {
-        return imageRes;
+    public String getImg() {
+        return img;
     }
-
     public double getPrice() {
         return price;
     }
 
-    public Product(String name, int imageRes, double price, String barcode) {
+    public void setProductNum(int productNum) {
+        this.productNum = productNum;
+    }
+    public void setProductName(String productName) {
+        this.name = productName;
+    }
+    public void setPrice(int price) {
+        this.price = price;
+    }
+    public void setImg(String img) {
+        this.img = img;
+    }
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public Product(String name, String img, double price, String barcode) {
 
         this.name = name;
-        this.imageRes = imageRes;
+        this.img = img;
         this.price = price;
         this.barcode = barcode;
     }
 
+    public Product(){}
 }

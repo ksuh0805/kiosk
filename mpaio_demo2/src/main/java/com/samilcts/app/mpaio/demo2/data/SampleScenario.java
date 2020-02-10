@@ -1,6 +1,10 @@
 package com.samilcts.app.mpaio.demo2.data;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.util.Log;
+
+import com.samilcts.app.mpaio.demo2.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -59,12 +63,13 @@ public class SampleScenario {
         }Log.d("plist", String.valueOf(ProductArray));
     }
 
-    public ArrayList<String> getDemoScenario(){ // 시나리오 정보 가져오기
+    public ArrayList<String> getDemoScenario(Context context){ // 시나리오 정보 가져오기
 
         String serial = android.os.Build.SERIAL; // 기기 serial number 가져오기
         Log.d("serialnumber", serial);
 
-        final String urlStr = "http://52.78.164.68/demo_s.php?sample="+serial; //  기기별 scenario 웹서버 url
+        final String urlStr = String.format(context.getString(R.string.scenario_server), serial,
+                context.getString(R.string.ID), context.getString(R.string.PWD)); //  기기별 scenario 웹서버 url
 
         Log.d("url", urlStr);
 
@@ -84,14 +89,14 @@ public class SampleScenario {
         return ProductArray;
     }
     public ArrayList Matching() { // scenario 내 유효한 상품번호만 가져오기
-        ArrayList<Integer> ProductNum = new ArrayList<>();
+        ArrayList<Integer> productNum = new ArrayList<>();
 
         for (int i = 0; i < ProductArray.size(); i++) {
             if (Integer.parseInt(ProductArray.get(i)) != 0){
                 Log.d("pl", String.valueOf(ProductArray.get(i)));
-                ProductNum.add(i+1);
+                productNum.add(i+1);
             }
         }
-        return ProductNum;
+        return productNum;
     }
 }

@@ -47,4 +47,17 @@
     <string name="enter_pin">Enter full PIN</string>
     <string name="app_exited">Exit app because device is disconnected</string>
 
+    <string name="scenario_server" translatable="false">http://52.78.164.68/demo_s.php?sample=%s&amp;id=%s&amp;Password=%s</string>
+    <string name="image_server" translatable="false">http://52.78.164.68/uploads/</string>
+    <string name="product_server" translatable="false">http://52.78.164.68/demo_p.php?sample=%s&amp;id=%s&amp;Password=%s</string>
+
+    <string name="ID" translatable="false">Admin</string>
+    <string name="PWD" translatable="false">Password</string>
+
+    <string name="product_number" translatable="false">P_num</string>
+    <string name="name" translatable="false">상품명</string>
+    <string name="product_price" translatable="false">가격</string>
+    <string name="image_res" translatable="false">이미지</string>
+    <string name="barcode" translatable="false">qr</string>
+
 </resources>

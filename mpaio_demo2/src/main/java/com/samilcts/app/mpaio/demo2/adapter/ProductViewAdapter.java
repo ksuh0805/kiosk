@@ -127,8 +127,9 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
         public void setImage(final String img) {
 
-            String imgRes = "http://52.78.164.68/uploads/"+img;
-            Glide.with(image.getContext()).load(imgRes).into(image);
+            String imgRes = image.getContext().getString(R.string.image_server)+img;
+
+            Glide.with(image.getContext()).load(imgRes).placeholder(R.drawable.loading_png).into(image);
         }
         public void setImage(final int imgRes) {
             image.setImageResource(imgRes);

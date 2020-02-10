@@ -1,5 +1,6 @@
 package com.samilcts.app.mpaio.demo2.data;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.samilcts.app.mpaio.demo2.R;
@@ -20,7 +21,7 @@ public class SampleProduct {
 
     ArrayList<Product> sampleProductArray = new ArrayList<>();
 
-    public void request(String urlStr){
+    public void request(String urlStr, Context context){
         String output = "";
         try{
             URL url = new URL(urlStr);
@@ -50,18 +51,18 @@ public class SampleProduct {
                 reader.close();
                 conn.disconnect();
             }
-            Log.d("view", output);
+
             JSONArray jsonObject = new JSONArray(output);
 
             JSONObject Object = jsonObject.getJSONObject(0);
 
             Product Products = new Product();
 
-            Products.setProductNum(Object.getInt("P_num"));
-            Products.setProductName(Object.getString("상품명"));
-            Products.setPrice(Object.getInt("가격"));
-            Products.setImg(Object.getString("이미지"));
-            Products.setBarcode(Object.getString("qr"));
+            Products.setProductNum(Object.getInt(context.getString(R.string.product_number)));
+            Products.setProductName(Object.getString(context.getString(R.string.name)));
+            Products.setPrice(Object.getInt(context.getString(R.string.product_price)));
+            Products.setImg(Object.getString(context.getString(R.string.image_res)));
+            Products.setBarcode(Object.getString(context.getString(R.string.barcode)));
 
             sampleProductArray.add(Products); // product 추가
         } catch (Exception ex) {
@@ -69,17 +70,19 @@ public class SampleProduct {
         }
     }
 
-    public ArrayList<Product> getDemoProduct(SampleScenario scenario){ //웹서버로부터 상품정보 가져오기
+    public ArrayList<Product> getDemoProduct(SampleScenario scenario, Context context){ //웹서버로부터 상품정보 가져오기
 
-        scenario.getDemoScenario();
+        scenario.getDemoScenario(context);
         ArrayList pnum = scenario.Matching();
         for(int i=0; i<pnum.size(); i++) {
-            final String urlStr = "http://52.78.164.68/demo_p.php?sample=" + pnum.get(i);
+
+            final String urlStr = String.format(context.getString(R.string.product_server), pnum.get(i),
+                    context.getString(R.string.ID), context.getString(R.string.PWD));
 
             Thread thread = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    request(urlStr);
+                    request(urlStr, context);
                 }
             });
             thread.start();
@@ -96,7 +99,7 @@ public class SampleProduct {
 
     private static ArrayList<ProductViewItem> watchList;
 
-    public static ArrayList<ProductViewItem> getWatchList() {
+    public static ArrayList<ProductViewItem> getWatchList(Context context) {
 
         if ( watchList != null)
             return watchList;
@@ -105,7 +108,7 @@ public class SampleProduct {
 
         SampleScenario sampleScenario = new SampleScenario();
         SampleProduct sampleProduct = new SampleProduct();
-        ArrayList<Product> ProductArray = sampleProduct.getDemoProduct(sampleScenario);
+        ArrayList<Product> ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
         Log.d("watchhhh", sampleProduct.sampleProductArray.get(0).getName());
 
         for(int i=0 ; i<ProductArray.size(); i++){ // 0 아닌 숫자로 세팅된 product number 리스트

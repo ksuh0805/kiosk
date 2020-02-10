@@ -53,9 +53,9 @@ public class PrintTool {
 
             HashMap<Product, Integer> cartItems = new HashMap<>();
 
-            cartItems.put(SampleProduct.getWatchList().get(0).getProduct(), 1);
-            cartItems.put(SampleProduct.getWatchList().get(1).getProduct(), 1);
-            cartItems.put(SampleProduct.getWatchList().get(2).getProduct(), 1);
+            cartItems.put(SampleProduct.getWatchList(context).get(0).getProduct(), 1);
+            cartItems.put(SampleProduct.getWatchList(context).get(1).getProduct(), 1);
+            cartItems.put(SampleProduct.getWatchList(context).get(2).getProduct(), 1);
 
             ReceiptInfo receiptInfo = new ReceiptInfo();
             receiptInfo.type = ReceiptInfo.TYPE_SAMPLE;
@@ -93,9 +93,9 @@ public class PrintTool {
 
         HashMap<Product, Integer> cartItems = new HashMap<>();
 
-        cartItems.put(SampleProduct.getWatchList().get(0).getProduct(), 1);
-        cartItems.put(SampleProduct.getWatchList().get(1).getProduct(), 1);
-        cartItems.put(SampleProduct.getWatchList().get(2).getProduct(), 1);
+        cartItems.put(SampleProduct.getWatchList(context).get(0).getProduct(), 1);
+        cartItems.put(SampleProduct.getWatchList(context).get(1).getProduct(), 1);
+        cartItems.put(SampleProduct.getWatchList(context).get(2).getProduct(), 1);
 
         ReceiptInfo receiptInfo = new ReceiptInfo();
         receiptInfo.type = ReceiptInfo.TYPE_SAMPLE;

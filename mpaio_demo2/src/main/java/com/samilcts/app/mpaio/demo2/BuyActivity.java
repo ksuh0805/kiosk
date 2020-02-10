@@ -1,5 +1,6 @@
 package com.samilcts.app.mpaio.demo2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -58,6 +59,7 @@ public class BuyActivity extends MpaioBaseActivity {
     @BindView(R.id.productListView) RecyclerView productListView;
     @BindView(R.id.tvBadge)
     TextView tvBadge;
+    Context context = this;
 
     @BindView(R.id.coordinatorLayout)
     CoordinatorLayout coordinatorLayout;
@@ -243,7 +245,7 @@ public class BuyActivity extends MpaioBaseActivity {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
 
-                productViewItems.addAll(SampleProduct.getWatchList());
+                productViewItems.addAll(SampleProduct.getWatchList(context));
                 subscriber.onCompleted();
 
             }

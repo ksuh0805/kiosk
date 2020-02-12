@@ -1,11 +1,13 @@
 package com.samilcts.app.mpaio.demo2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -20,6 +22,8 @@ import com.samilcts.app.mpaio.demo2.util.AppTool;
 import com.samilcts.app.mpaio.demo2.util.PrintTool;
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -34,6 +38,7 @@ import butterknife.OnClick;
 import rx.functions.Action0;
 
 public class PrepaidReceiptActivity extends MpaioBaseActivity {
+    Context context = this;
 
     @BindView(R.id.coordinatorLayout)
     CoordinatorLayout coordinatorLayout;
@@ -129,6 +134,17 @@ public class PrepaidReceiptActivity extends MpaioBaseActivity {
 
 
             totalCharge +=  product.getPrice() * amount;
+
+            Thread thread = new Thread(new Runnable() {
+                String urlStr = String.format(context.getString(R.string.server),
+                        product.getName(),amount, product.getPrice(),
+                        context.getString(R.string.ID), context.getString(R.string.PWD));
+                @Override
+                public void run() {
+                    request(urlStr);
+                }
+            });
+            thread.start();
         }
 
 
@@ -147,7 +163,6 @@ public class PrepaidReceiptActivity extends MpaioBaseActivity {
         mInfo = (ReceiptInfo) getIntent().getSerializableExtra(CartActivity.EXTRA_RECEIPT_INFO);
 
         setReceiptData();
-
     }
 
     private void setReceiptData() {
@@ -210,6 +225,19 @@ public class PrepaidReceiptActivity extends MpaioBaseActivity {
         tvTradeAmount.setText(tradeAmount);
         tvAfterBalance.setText(afterBalance);
 
+    }
+    public void request(String urlStr) {
+
+        try {
+            URL url = new URL(urlStr);
+            Log.d("view", String.valueOf(url));
+
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            conn.disconnect();
+        }catch (Exception ex) {
+            Log.d("Error", "예외 발생 : " + ex.toString());
+        }
     }
 
     @OnClick(R.id.print)

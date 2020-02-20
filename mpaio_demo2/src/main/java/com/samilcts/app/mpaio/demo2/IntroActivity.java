@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import com.samilcts.app.mpaio.demo2.util.AppTool;
 import com.samilcts.app.mpaio.demo2.util.PaymgateUtil;
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
+import com.samilcts.app.mpaio.demo2.util.ShowActivity;
 import com.samilcts.media.State;
 import com.samilcts.sdk.mpaio.command.MpaioCommand;
 import com.samilcts.sdk.mpaio.ext.dialog.RxConnectionDialog;
@@ -103,7 +104,8 @@ public class IntroActivity extends MpaioBaseActivity {
                @Override
                public void onCompleted() {
 
-                   goBuy();
+                   //goBuy();
+                   goShow();
 
                }
 
@@ -129,6 +131,17 @@ public class IntroActivity extends MpaioBaseActivity {
     private void goBuy() {
         if ( !isStarted ) {
             Intent i = new Intent(getApplicationContext(), BuyActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(i);
+            finish();
+
+            isStarted = true;
+        }
+    }
+
+    private void goShow() {
+        if (!isStarted) {
+            Intent i = new Intent(getApplicationContext(), ShowActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(i);
             finish();
@@ -169,8 +182,8 @@ public class IntroActivity extends MpaioBaseActivity {
 
             case State.DISCONNECTED:
 
-
-                Snackbar.make(coordinatorLayout,mState == State.CONNECTED
+                onConnected();
+                /*Snackbar.make(coordinatorLayout,mState == State.CONNECTED
                         ? R.string.disconnected : R.string.fail_to_connect, Snackbar.LENGTH_LONG)
                         .show();
 
@@ -181,12 +194,13 @@ public class IntroActivity extends MpaioBaseActivity {
 
                 progressBar.setVisibility(View.INVISIBLE);
 
-                break;
+                break;*/
+                //goBuy();
+                goShow();
 
         }
 
         mState = state;
-
     }
 
     /**

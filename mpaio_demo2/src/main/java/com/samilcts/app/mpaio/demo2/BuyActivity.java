@@ -59,7 +59,6 @@ public class BuyActivity extends MpaioBaseActivity {
     @BindView(R.id.productListView) RecyclerView productListView;
     @BindView(R.id.tvBadge)
     TextView tvBadge;
-    Context context = this;
 
     @BindView(R.id.coordinatorLayout)
     CoordinatorLayout coordinatorLayout;
@@ -67,6 +66,7 @@ public class BuyActivity extends MpaioBaseActivity {
     @BindInt(R.integer.product_column) int productColumn;
 
     ArrayList<ProductViewItem> productViewItems;
+    ArrayList<Product> productList;
 
     LinkedHashMap<Product, Integer> cartItems;
 
@@ -90,7 +90,8 @@ public class BuyActivity extends MpaioBaseActivity {
 
 
         AppTool.localPath = getFilesDir().getPath();
-
+        Intent intent = getIntent();
+        productList = (ArrayList<Product>) intent.getSerializableExtra("productlist");
 
         Preference preference = Preference.getInstance(getApplicationContext());
 
@@ -245,7 +246,7 @@ public class BuyActivity extends MpaioBaseActivity {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
 
-                productViewItems.addAll(SampleProduct.getWatchList(context));
+                productViewItems.addAll(SampleProduct.getWatchList(productList));
                 subscriber.onCompleted();
 
             }

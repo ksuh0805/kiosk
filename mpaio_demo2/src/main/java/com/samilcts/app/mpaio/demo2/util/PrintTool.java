@@ -44,6 +44,7 @@ import rx.functions.Action1;
 public class PrintTool {
 
     private static final String TAG = "PrintTool";
+    static ArrayList<Product> Sample= new ArrayList<Product>();
 
     public static void printSample(Context context){
 
@@ -53,9 +54,9 @@ public class PrintTool {
 
             HashMap<Product, Integer> cartItems = new HashMap<>();
 
-            cartItems.put(SampleProduct.getWatchList(context).get(0).getProduct(), 1);
-            cartItems.put(SampleProduct.getWatchList(context).get(1).getProduct(), 1);
-            cartItems.put(SampleProduct.getWatchList(context).get(2).getProduct(), 1);
+            cartItems.put(SampleProduct.getWatchList(Sample).get(0).getProduct(), 1);
+            cartItems.put(SampleProduct.getWatchList(Sample).get(1).getProduct(), 1);
+            cartItems.put(SampleProduct.getWatchList(Sample).get(2).getProduct(), 1);
 
             ReceiptInfo receiptInfo = new ReceiptInfo();
             receiptInfo.type = ReceiptInfo.TYPE_SAMPLE;
@@ -93,9 +94,9 @@ public class PrintTool {
 
         HashMap<Product, Integer> cartItems = new HashMap<>();
 
-        cartItems.put(SampleProduct.getWatchList(context).get(0).getProduct(), 1);
-        cartItems.put(SampleProduct.getWatchList(context).get(1).getProduct(), 1);
-        cartItems.put(SampleProduct.getWatchList(context).get(2).getProduct(), 1);
+        cartItems.put(SampleProduct.getWatchList(Sample).get(0).getProduct(), 1);
+        cartItems.put(SampleProduct.getWatchList(Sample).get(1).getProduct(), 1);
+        cartItems.put(SampleProduct.getWatchList(Sample).get(2).getProduct(), 1);
 
         ReceiptInfo receiptInfo = new ReceiptInfo();
         receiptInfo.type = ReceiptInfo.TYPE_SAMPLE;

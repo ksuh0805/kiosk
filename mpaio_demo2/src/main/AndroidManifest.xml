@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.samilcts.app.mpaio.demo2">
 
-    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" android:minSdkVersion="23" />
+    <uses-permission-sdk-23
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:minSdkVersion="23" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -12,6 +15,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".util.ShowActivity"></activity>
         <activity
             android:name=".IntroActivity"
             android:configChanges="orientation|screenSize"
@@ -24,17 +28,16 @@
         </activity>
         <activity
             android:name=".BuyActivity"
-            android:label="@string/title_activity_buy"
-          />
+            android:label="@string/title_activity_buy" />
         <activity
             android:name=".KeyPadActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_keypad"
-            android:parentActivityName=".PrepaidCardActivity"
-            > <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".PrepaidCardActivity" /></activity>
-
+            android:parentActivityName=".PrepaidCardActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrepaidCardActivity" />
+        </activity>
         <activity
             android:name=".CartActivity"
             android:configChanges="orientation|screenSize"
@@ -44,12 +47,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".BuyActivity" />
         </activity>
-
-
         <activity
             android:name=".PrepaidCardActivity"
-            android:label="@string/title_activity_prepaid_card"
-            />
+            android:label="@string/title_activity_prepaid_card" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -67,18 +67,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".BuyActivity" />
         </activity>
-
-
         <activity
-        android:name=".PrepaidReceiptActivity"
-        android:label="@string/title_activity_receipt"
-        android:launchMode="singleTop"
-        android:parentActivityName=".PrepaidCardActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".PrepaidCardActivity" />
-    </activity>
-
+            android:name=".PrepaidReceiptActivity"
+            android:label="@string/title_activity_receipt"
+            android:launchMode="singleTop"
+            android:parentActivityName=".PrepaidCardActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PrepaidCardActivity" />
+        </activity>
         <activity
             android:name=".PrepaidLogActivity"
             android:label="@string/title_activity_prepaid_log"
@@ -88,7 +85,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".PrepaidCardActivity" />
         </activity>
-
         <activity
             android:name=".TmoneyReceiptActivity"
             android:label="@string/title_activity_receipt"
@@ -98,7 +94,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".BuyActivity" />
         </activity>
-
         <activity
             android:name=".CashbeeReceiptActivity"
             android:label="@string/title_activity_receipt"
@@ -111,13 +106,11 @@
 
         <service
             android:name=".MpaioService"
-            android:enabled="true" >
-        </service>
+            android:enabled="true"></service>
 
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="f468b9a04c5688bcb579cd35e7e7dbc032442096" />
-
     </application>
 
 </manifest>

@@ -189,5 +189,17 @@
     <orderEntry type="module" module-name="mpaio_ext_dialogs" />
     <orderEntry type="module" module-name="util" />
     <orderEntry type="module" module-name="dialogs" />
+    <orderEntry type="module" module-name="mpaio_ext_nice" />
+    <orderEntry type="module" module-name="mpaio_sdk" />
+    <orderEntry type="module" module-name="media" />
+    <orderEntry type="module" module-name="mpaio_ext_dialogs" />
+    <orderEntry type="module" module-name="util" />
+    <orderEntry type="module" module-name="dialogs" />
+    <orderEntry type="module" module-name="mpaio_ext_nice" />
+    <orderEntry type="module" module-name="mpaio_sdk" />
+    <orderEntry type="module" module-name="media" />
+    <orderEntry type="module" module-name="mpaio_ext_dialogs" />
+    <orderEntry type="module" module-name="util" />
+    <orderEntry type="module" module-name="dialogs" />
   </component>
 </module>

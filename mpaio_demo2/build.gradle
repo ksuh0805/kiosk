@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-      flatDir {
+        flatDir {
             dirs 'libs'
         }
     }
@@ -51,14 +51,14 @@ android {
             applicationId 'com.samilcts.mpos.demo.mpaio2.dev'
             versionCode 20301
             versionName "2.3.1"
-            project.ext.set("archivesBaseName", "MPAIO Demo2 v"+ versionName);
+            project.ext.set("archivesBaseName", "MPAIO Demo2 v" + versionName);
         }
 
         product {
             applicationId 'com.samilcts.mpos.demo.mpaio2'
             versionCode 20301
             versionName "2.3.1"
-            project.ext.set("archivesBaseName", "MPAIO Demo2 v"+ versionName);
+            project.ext.set("archivesBaseName", "MPAIO Demo2 v" + versionName);
         }
 
     }
@@ -76,9 +76,9 @@ android {
 }
 
 
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     implementation('com.mikepenz:materialdrawer:4.6.1@aar') {
         transitive = true
@@ -118,4 +118,7 @@ dependencies {
     implementation project(':dialogs')
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    compile('com.alibaba.android:ultraviewpager:1.0.7.7@aar') {
+        transitive = true
+    }
 }

@@ -59,7 +59,7 @@ public class SampleProduct {
             Product Products = new Product();
 
             Products.setProductNum(Object.getInt(context.getString(R.string.product_number)));
-            Products.setProductName(Object.getString(context.getString(R.string.name)));
+            Products.setProductName(Object.getString(context.getString(R.string.product_name)));
             Products.setPrice(Object.getInt(context.getString(R.string.product_price)));
             Products.setImg(Object.getString(context.getString(R.string.image_res)));
             Products.setBarcode(Object.getString(context.getString(R.string.barcode)));
@@ -72,6 +72,7 @@ public class SampleProduct {
 
     public ArrayList<Product> getDemoProduct(SampleScenario scenario, Context context){ //웹서버로부터 상품정보 가져오기
 
+        sampleProductArray.clear();
         scenario.getDemoScenario(context);
         ArrayList pnum = scenario.Matching();
         for(int i=0; i<pnum.size(); i++) {
@@ -99,18 +100,18 @@ public class SampleProduct {
 
     private static ArrayList<ProductViewItem> watchList;
 
-    public static ArrayList<ProductViewItem> getWatchList(Context context) {
+    public static ArrayList<ProductViewItem> getWatchList(ArrayList ProductArray) {
 
         if ( watchList != null)
             return watchList;
 
         watchList = new ArrayList<>();
-
+/*
         SampleScenario sampleScenario = new SampleScenario();
         SampleProduct sampleProduct = new SampleProduct();
         ArrayList<Product> ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
         Log.d("watchhhh", sampleProduct.sampleProductArray.get(0).getName());
-
+*/
         for(int i=0 ; i<ProductArray.size(); i++){ // 0 아닌 숫자로 세팅된 product number 리스트
             Product demop = (Product) (ProductArray.get(i));
 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="util.ShowActivity"
+    >
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="10dp"
+        android:background="@null"
+        android:onClick="refresh"
+        android:scaleType="centerCrop"
+        android:src="@drawable/click_button" />
+
+    <com.tmall.ultraviewpager.UltraViewPager
+        android:id="@+id/ultra_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent">
+    </com.tmall.ultraviewpager.UltraViewPager>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="주문하시려면\n화면 빈 공간을 터치해주세요"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:typeface="normal" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Starbucks 평촌점"
+        android:textColor="#BDBDBD"/>
+
+</LinearLayout>
+

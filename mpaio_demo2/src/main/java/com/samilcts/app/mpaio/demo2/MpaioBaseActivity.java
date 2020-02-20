@@ -115,10 +115,10 @@ public abstract class MpaioBaseActivity extends BaseActivity {
      * check mpaio is connected. if not connected, show disconnection dialog.
      */
     public void checkConnected() {
-
+/*
         if ( !mpaioManager.isConnected() && this.getClass() != IntroActivity.class ) {
             showDisconnectionConfirmDialog();
-        }
+        }*/
 
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.view.MotionEvent;
 
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
 import com.samilcts.media.State;
@@ -137,7 +138,6 @@ public abstract class MpaioBaseActivity extends BaseActivity {
 
         isConnected = false;
     }
-
     @Override
     protected void onDestroy() {
 

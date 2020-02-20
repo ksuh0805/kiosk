@@ -1,4 +1,4 @@
-package com.samilcts.app.mpaio.demo2.util;
+package com.samilcts.app.mpaio.demo2;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ShowActivity extends AppCompatActivity {
+public class ShowActivity extends MpaioBaseActivity {
 
     Context context = this;
     UltraViewPager ultraViewPager;
@@ -93,9 +93,9 @@ public class ShowActivity extends AppCompatActivity {
             }
         }, 1800000, 1800000);
     }
-    public boolean onTouchEvent(MotionEvent event) {
-        int action = event.getAction();
 
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        int action = event.getAction();
         if (action == MotionEvent.ACTION_UP) {
 
             Intent intent = new Intent(getApplicationContext(), BuyActivity.class);
@@ -107,13 +107,14 @@ public class ShowActivity extends AppCompatActivity {
 
         return super.onTouchEvent(event);
     }
+    /*
     public void refresh(View v){
 
         ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
         Log.d("wwwwatchhhh", ProductArray.get(0).getName());
         PagerAdapter adapter = new UltraPagerAdapter(true, ProductArray);
         ultraViewPager.setAdapter(adapter);
-    }
+    }*/
     Handler handler = new Handler(){
         public void handleMessage(Message msg){
             ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);

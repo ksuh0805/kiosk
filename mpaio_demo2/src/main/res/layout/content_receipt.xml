@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.samilcts.app.mpaio.demo2.MsIcReceiptActivity"
-    tools:showIn="@layout/activity_receipt"
+    android:paddingLeft="@dimen/padding_receipt_content_h"
     android:paddingTop="@dimen/padding_receipt_content_v"
     android:paddingRight="@dimen/padding_receipt_content_h"
-    android:paddingLeft="@dimen/padding_receipt_content_h">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.samilcts.app.mpaio.demo2.MsIcReceiptActivity"
+    tools:showIn="@layout/activity_receipt">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,109 +18,109 @@
         android:background="@android:color/transparent">
 
         <ImageView
-            android:contentDescription="receipt background"
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView2"
-            android:src="@drawable/receipt_img01"
-            android:alpha="0.2"
             android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY" />
+            android:alpha="0.2"
+            android:contentDescription="receipt background"
+            android:scaleType="fitXY"
+            android:src="@drawable/receipt_img01" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView2"
             android:layout_alignBottom="@+id/imageView2"
-            android:layout_alignTop="@+id/imageView2">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_receipt_top"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingLeft="@dimen/padding_receipt_inner_content_h"
                 android:paddingRight="@dimen/padding_receipt_inner_content_h">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                            <com.devspark.robototextview.widget.RobotoTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Date. "
-                                android:id="@+id/textView6"
-                                android:textColor="@color/colorWhite"
-                                android:textSize="@dimen/size_receipt_info"
-                                style="@style/RobotoMedium"/>
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/textView6"
+                            style="@style/RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date. "
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/size_receipt_info" />
 
-                            <com.devspark.robototextview.widget.RobotoTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:id="@+id/tvDate"
-                                android:textColor="@color/colorWhite"
-                                android:textSize="@dimen/size_receipt_info"
-                                style="@style/RobotoMedium"/>
-                        </LinearLayout>
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/tvDate"
+                            style="@style/RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/size_receipt_info" />
+                    </LinearLayout>
 
                     <LinearLayout
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                            <com.devspark.robototextview.widget.RobotoTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:text="Card no. "
-                                android:id="@+id/textView4"
-                                android:textColor="@color/colorWhite"
-                                android:textSize="@dimen/size_receipt_info"
-                                style="@style/RobotoMedium"/>
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/textView4"
+                            style="@style/RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Card no. "
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/size_receipt_info" />
 
-                            <com.devspark.robototextview.widget.RobotoTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceMedium"
-                                android:id="@+id/tvCardNumber"
-                                android:textColor="@color/colorWhite"
-                                android:textSize="@dimen/size_receipt_info"
-                                style="@style/RobotoMedium"/>
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/tvCardNumber"
+                            style="@style/RobotoMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/size_receipt_info" />
 
                     </LinearLayout>
                 </LinearLayout>
 
                 <ImageView
+                    android:id="@+id/imageView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView5"
-                    android:src="@drawable/samil_logo"
                     android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/samil_logo" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/colorWhite10"></LinearLayout>
+                android:background="@color/colorWhite10"
+                android:orientation="vertical"></LinearLayout>
 
             <ScrollView
+                android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/scrollView"
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -130,14 +129,14 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <include
+                            layout="@layout/header_receipt_list"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            layout="@layout/header_receipt_list" />
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
                     <android.support.v7.widget.RecyclerView
@@ -155,9 +154,9 @@
                     </android.support.v7.widget.RecyclerView>
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <include
                             layout="@layout/footer_receipt_list"
@@ -169,40 +168,40 @@
             </ScrollView>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/colorWhite10" />
+                android:background="@color/colorWhite10"
+                android:orientation="vertical" />
 
             <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/height_receipt_total"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_receipt_total"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingLeft="@dimen/padding_receipt_inner_content_h"
                 android:paddingRight="@dimen/padding_receipt_inner_content_h">
 
-                    <com.devspark.robototextview.widget.RobotoTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Total"
-                        android:id="@+id/textView2"
-                        android:textSize="@dimen/size_receipt_total"
-                        android:textColor="@color/colorWhite"
-                        style="@style/RobotoMedium"/>
+                <com.devspark.robototextview.widget.RobotoTextView
+                    android:id="@+id/textView2"
+                    style="@style/RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/size_receipt_total" />
 
-                    <com.devspark.robototextview.widget.RobotoTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/tvTotal"
-                        android:layout_weight="1"
-                        android:textAlignment="viewEnd"
-                        android:textSize="@dimen/size_receipt_total"
-                        android:textColor="@color/colorWhite"
-                        style="@style/RobotoMedium"/>
-                </LinearLayout>
+                <com.devspark.robototextview.widget.RobotoTextView
+                    android:id="@+id/tvTotal"
+                    style="@style/RobotoMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="viewEnd"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/size_receipt_total" />
+            </LinearLayout>
 
         </LinearLayout>
 

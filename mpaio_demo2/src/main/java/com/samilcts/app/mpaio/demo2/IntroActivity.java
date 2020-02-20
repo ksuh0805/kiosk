@@ -1,6 +1,5 @@
 package com.samilcts.app.mpaio.demo2;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -17,14 +16,11 @@ import android.widget.ProgressBar;
 import com.samilcts.app.mpaio.demo2.util.AppTool;
 import com.samilcts.app.mpaio.demo2.util.PaymgateUtil;
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
-import com.samilcts.app.mpaio.demo2.util.ShowActivity;
 import com.samilcts.media.State;
 import com.samilcts.sdk.mpaio.command.MpaioCommand;
 import com.samilcts.sdk.mpaio.ext.dialog.RxConnectionDialog;
-import com.samilcts.util.android.BytesBuilder;
 import com.samilcts.util.android.Logger;
 
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;

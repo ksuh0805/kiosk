@@ -22,6 +22,7 @@ import com.samilcts.app.mpaio.demo2.data.CardInfo;
 import com.samilcts.app.mpaio.demo2.util.AppTool;
 import com.samilcts.app.mpaio.demo2.util.DefaultParser;
 import com.samilcts.app.mpaio.demo2.util.PaymgateUtil;
+import com.samilcts.app.mpaio.demo2.util.SharedInstance;
 import com.samilcts.receipt.nice.ReceiptParser;
 import com.samilcts.receipt.nice.data.ReceiptInfo;
 import com.samilcts.sdk.mpaio.callback.ResultCallback;
@@ -886,7 +887,8 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
                 logger.i(TAG, "parse " + e);
             }
 
-            ToastUtil.show(mContext, "payment completed");
+            ToastUtil.show(mContext, "거래 완료되었습니다.");
+            finish();
         }
 
 

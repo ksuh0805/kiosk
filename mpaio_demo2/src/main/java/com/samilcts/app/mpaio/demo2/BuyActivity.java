@@ -111,6 +111,7 @@ public class BuyActivity extends MpaioBaseActivity {
                 Intent i = new Intent(getBaseContext(), CartActivity.class);
 
                 startActivity(i);
+                finish();
 
             }
         });

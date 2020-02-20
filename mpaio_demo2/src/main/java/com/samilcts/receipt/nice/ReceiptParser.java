@@ -1,11 +1,13 @@
 package com.samilcts.receipt.nice;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.common.base.Strings;
 import com.samilcts.app.mpaio.demo2.R;
 import com.samilcts.app.mpaio.demo2.data.CardInfo;
 import com.samilcts.app.mpaio.demo2.data.Product;
+import com.samilcts.app.mpaio.demo2.data.ReceiptViewItem;
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
 import com.samilcts.receipt.nice.data.NiceReceipt;
 import com.samilcts.receipt.nice.data.ReceiptInfo;
@@ -15,12 +17,18 @@ import com.samilcts.app.mpaio.demo2.util.CardName;
 import com.samilcts.util.android.BytesBuilder;
 import com.samilcts.util.android.Logger;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.Locale;
 
 /**
@@ -124,6 +132,38 @@ public class ReceiptParser {
 
 
     private void setNiceMsIcReceipt(byte[] data, ReceiptInfo receiptInfo) {
+        LinkedHashMap<Product, Integer> paidItems;
+        paidItems = SharedInstance.getCartItems(); //.clone();
+
+        ArrayList<ReceiptViewItem> itemArrayList = new ArrayList<>();
+
+        double totalCharge = 0;
+
+        for (Product product :
+                paidItems.keySet()) {
+
+            int amount =  paidItems.get(product);
+
+            totalCharge +=  product.getPrice() * amount;
+            Log.d("ccheck3", String.valueOf(totalCharge));
+            Log.d("ccheck3", String.valueOf(product.getName()));
+            Log.d("ccheck3", String.valueOf(amount));
+            Log.d("ccheck3", String.valueOf(product.getPrice()));
+
+            Thread thread = new Thread(new Runnable() {
+                String urlStr = String.format(mContext.getString(R.string.server),
+                        product.getName(), amount, product.getPrice(),
+                        mContext.getString(R.string.ID), mContext.getString(R.string.PWD));
+
+                @Override
+                public void run() {
+                    Log.d("ccheck3", urlStr);
+                    request(urlStr);
+                    Log.d("pserver123", String.valueOf(urlStr));
+                }
+            });
+            thread.start();
+        }
 
 
         ByteBuffer buffer = ByteBuffer.wrap(data);
@@ -278,6 +318,32 @@ public class ReceiptParser {
         buffer.clear();
 
         BytesBuilder.clear(temp);
+        SharedInstance.clearCartItem();
+    }
+
+    public void request(String urlStr) {
+
+        try {
+            URL url = new URL(urlStr);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            Log.d("view", String.valueOf(url));
+
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(10000);       //컨텍션타임아웃 10초
+            conn.setReadTimeout(5000);           //컨텐츠조회 타임아웃 5총
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            System.out.println("조회결과 : " + response.toString());
+
+        }catch (Exception ex) {
+            Log.d("Error", "예외 발생 : " + ex.toString());
+        }
     }
 
 

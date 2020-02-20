@@ -1,11 +1,13 @@
 package com.samilcts.app.mpaio.demo2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -20,6 +22,10 @@ import com.samilcts.app.mpaio.demo2.util.AppTool;
 import com.samilcts.app.mpaio.demo2.util.PrintTool;
 import com.samilcts.app.mpaio.demo2.util.SharedInstance;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -139,6 +145,7 @@ public class MsIcReceiptActivity extends MpaioBaseActivity {
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
+        Context context = this;
         super.onPostCreate(savedInstanceState);
 
     ArrayList<ReceiptViewItem> itemArrayList = new ArrayList<>();
@@ -154,6 +161,20 @@ public class MsIcReceiptActivity extends MpaioBaseActivity {
 
 
             totalCharge +=  product.getPrice() * amount;
+            Thread thread = new Thread(new Runnable() {
+                String urlStr = String.format(context.getString(R.string.server),
+                        product.getName(), amount, product.getPrice(),
+                        context.getString(R.string.ID), context.getString(R.string.PWD));
+
+                @Override
+                public void run() {
+                    Log.d("ccheck3", urlStr);
+                    request(urlStr);
+                    Log.d("pserver123", String.valueOf(urlStr));
+                }
+            });
+            thread.start();
+
         }
 
 
@@ -254,52 +275,35 @@ public class MsIcReceiptActivity extends MpaioBaseActivity {
 
     }
 
+    public void request(String urlStr) {
+
+        try {
+            URL url = new URL(urlStr);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            Log.d("view", String.valueOf(url));
+
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(10000);       //컨텍션타임아웃 10초
+            conn.setReadTimeout(5000);           //컨텐츠조회 타임아웃 5총
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            System.out.println("조회결과 : " + response.toString());
+
+        }catch (Exception ex) {
+            Log.d("Error", "예외 발생 : " + ex.toString());
+        }
+    }
+
     @OnClick(R.id.print)
     void print(){
-
-        logger.i(TAG,"printers : " + AppTool.getPairedPrinters(this).size());
-
-            mInfo.cartItems = paidItems;
-
-        if ( !SharedInstance.getPrinter().isConnected()) {
-
-            if ( SharedInstance.getInternalPrinterModels().contains(SharedInstance.deviceModelName)){
-
-                //내장 프린터
-                PrintTool.printInternalPrinter(this, mInfo).subscribe(PaymgateUtil.getPrinterSubscriber(coordinatorLayout, new Action0() {
-                    @Override
-                    public void call() {
-                        SharedInstance.clearCartItem();
-                        SharedInstance.getPrinter().setStateChangeListener(null);
-                        finish();
-                    }
-                }));
-
-
-
-            } else if (AppTool.getLastConnectedPrinterDevice(this) != null)  {
-
-                AppTool.showPrinterReconnectDialog(this);
-
-            } else {
-
-                Intent i = getIntent();
-                i.setClass(getBaseContext(), SettingsActivity.class);
-                i.putExtra(SettingsActivity.EXTRA_TYPE_SUB, true);
-
-                finish();
-                startActivity(i);
-            }
-
-
-        }  else if ( PrintTool.printReceipt(this, mInfo) ) {
-
-            SharedInstance.clearCartItem();
-            SharedInstance.getPrinter().setStateChangeListener(null);
-            finish();
-        }
-
-
+        SharedInstance.clearCartItem();
+        finish();
     }
 
 

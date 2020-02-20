@@ -15,7 +15,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".util.ShowActivity"></activity>
+        <activity android:name=".ShowActivity"></activity>
         <activity
             android:name=".IntroActivity"
             android:configChanges="orientation|screenSize"

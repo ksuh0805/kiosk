@@ -98,7 +98,5 @@
     <orderEntry type="library" name="Gradle: com.github.felHR85:UsbSerial:4.5.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.artemzin.rxjava:proguard-rules:1.2.7.0@aar" level="project" />
     <orderEntry type="module" module-name="util" />
-    <orderEntry type="module" module-name="util" />
-    <orderEntry type="module" module-name="util" />
   </component>
 </module>

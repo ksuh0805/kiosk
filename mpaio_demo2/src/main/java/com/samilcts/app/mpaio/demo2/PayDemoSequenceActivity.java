@@ -887,7 +887,8 @@ public abstract class PayDemoSequenceActivity extends MpaioBaseActivity {
                 logger.i(TAG, "parse " + e);
             }
 
-            ToastUtil.show(mContext, "거래 완료되었습니다.");
+            ToastUtil.show(mContext, "거래 완료.");
+            SharedInstance.clearCartItem();
             finish();
         }
 

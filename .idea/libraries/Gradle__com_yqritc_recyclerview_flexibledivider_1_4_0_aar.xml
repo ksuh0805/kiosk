@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.yqritc:recyclerview-flexibledivider:1.4.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d87be4ce0ff2a04d06102e1b15604f1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6d87be4ce0ff2a04d06102e1b15604f1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eb1f8b696dc67233d1c9f8fcd4a7c20/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eb1f8b696dc67233d1c9f8fcd4a7c20/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yqritc/recyclerview-flexibledivider/1.4.0/fcc9601443a44820a389de37e991235f5e5b0b99/recyclerview-flexibledivider-1.4.0-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yqritc/recyclerview-flexibledivider/1.4.0/a9a08d0399cf2ffeac279ccafcce06c227d0f110/recyclerview-flexibledivider-1.4.0-sources.jar!/" />
     </SOURCES>

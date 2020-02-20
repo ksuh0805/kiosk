@@ -132,11 +132,5 @@
     <orderEntry type="module" module-name="mpaio_sdk" />
     <orderEntry type="module" module-name="media" />
     <orderEntry type="module" module-name="util" />
-    <orderEntry type="module" module-name="mpaio_sdk" />
-    <orderEntry type="module" module-name="media" />
-    <orderEntry type="module" module-name="util" />
-    <orderEntry type="module" module-name="mpaio_sdk" />
-    <orderEntry type="module" module-name="media" />
-    <orderEntry type="module" module-name="util" />
   </component>
 </module>

@@ -19,7 +19,7 @@
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/dev/res;file://$MODULE_DIR$/build/generated/res/rs/dev/debug;file://$MODULE_DIR$/build/generated/res/resValues/dev/debug" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/src/main/res;file://$MODULE_DIR$/src/dev/res;file://$MODULE_DIR$/build/generated/res/rs/dev/debug" />
         <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/build/generated/res/rs/androidTest/dev/debug" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
@@ -183,18 +183,6 @@
     <orderEntry type="library" name="Gradle: com.github.felHR85:UsbSerial:4.5.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.artemzin.rxjava:proguard-rules:1.2.7.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: net.yslibrary.licenseadapter:licenseadapter:1.4.0@aar" level="project" />
-    <orderEntry type="module" module-name="mpaio_ext_nice" />
-    <orderEntry type="module" module-name="mpaio_sdk" />
-    <orderEntry type="module" module-name="media" />
-    <orderEntry type="module" module-name="mpaio_ext_dialogs" />
-    <orderEntry type="module" module-name="util" />
-    <orderEntry type="module" module-name="dialogs" />
-    <orderEntry type="module" module-name="mpaio_ext_nice" />
-    <orderEntry type="module" module-name="mpaio_sdk" />
-    <orderEntry type="module" module-name="media" />
-    <orderEntry type="module" module-name="mpaio_ext_dialogs" />
-    <orderEntry type="module" module-name="util" />
-    <orderEntry type="module" module-name="dialogs" />
     <orderEntry type="module" module-name="mpaio_ext_nice" />
     <orderEntry type="module" module-name="mpaio_sdk" />
     <orderEntry type="module" module-name="media" />

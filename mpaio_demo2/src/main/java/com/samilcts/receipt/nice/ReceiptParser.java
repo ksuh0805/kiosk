@@ -318,7 +318,6 @@ public class ReceiptParser {
         buffer.clear();
 
         BytesBuilder.clear(temp);
-        SharedInstance.clearCartItem();
     }
 
     public void request(String urlStr) {

@@ -50,7 +50,7 @@
     <string name="scenario_server" translatable="false">http://52.78.164.68/demo_s.php?sample=%s&amp;id=%s&amp;Password=%s</string>
     <string name="image_server" translatable="false">http://52.78.164.68/uploads/</string>
     <string name="product_server" translatable="false">http://52.78.164.68/demo_p.php?sample=%s&amp;id=%s&amp;Password=%s</string>
-    <string name="server" translatable="false">http://52.78.164.68/demo_m.php?name=%s&amp;amount%d&amp;price=%f&amp;id=%s&amp;Password=%s</string>
+    <string name="server" translatable="false">http://52.78.164.68/demo_m.php?name=%s&amp;amount=%d&amp;price=%f&amp;id=%s&amp;Password=%s</string>
 
     <string name="ID" translatable="false">Admin</string>
     <string name="PWD" translatable="false">Password</string>

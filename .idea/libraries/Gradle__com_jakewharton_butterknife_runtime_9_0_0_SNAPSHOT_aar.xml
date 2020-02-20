@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.jakewharton:butterknife-runtime:9.0.0-SNAPSHOT@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf077790e6cf7b3dd7246f85fb35676c/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf077790e6cf7b3dd7246f85fb35676c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04a33a632c9c9a7a0ba8d6bad8ed7e62/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/04a33a632c9c9a7a0ba8d6bad8ed7e62/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-runtime/9.0.0-SNAPSHOT/a79c4e9319eccf42d6639aba2f9eb349922d30f0/butterknife-runtime-9.0.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-runtime/9.0.0-SNAPSHOT/30f9c47450334b073b6bee9ec642e67cc348d668/butterknife-runtime-9.0.0-SNAPSHOT-sources.jar!/" />
     </SOURCES>

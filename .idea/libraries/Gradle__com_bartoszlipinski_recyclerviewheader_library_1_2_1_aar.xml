@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.bartoszlipinski.recyclerviewheader:library:1.2.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0270b3b6e363ceed292d4d7bed492929/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0270b3b6e363ceed292d4d7bed492929/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/620a037e55911ceafe0fd7c8362786b1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/620a037e55911ceafe0fd7c8362786b1/res" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bartoszlipinski.recyclerviewheader/library/1.2.1/8cb5d2de5f2d5d38be1bb783c0e6393af7a7c48c/library-1.2.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.bartoszlipinski.recyclerviewheader/library/1.2.1/71769ef8669415af218b3f3977cd777e9e862853/library-1.2.1-sources.jar!/" />
     </SOURCES>

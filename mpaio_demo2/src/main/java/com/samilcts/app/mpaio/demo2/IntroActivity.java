@@ -182,8 +182,7 @@ public class IntroActivity extends MpaioBaseActivity {
 
             case State.DISCONNECTED:
 
-                onConnected();
-                /*Snackbar.make(coordinatorLayout,mState == State.CONNECTED
+                Snackbar.make(coordinatorLayout,mState == State.CONNECTED
                         ? R.string.disconnected : R.string.fail_to_connect, Snackbar.LENGTH_LONG)
                         .show();
 
@@ -194,9 +193,7 @@ public class IntroActivity extends MpaioBaseActivity {
 
                 progressBar.setVisibility(View.INVISIBLE);
 
-                break;*/
-                //goBuy();
-                goShow();
+                break;
 
         }
 

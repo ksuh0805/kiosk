@@ -7,18 +7,8 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".ShowActivity"
+    android:id="@+id/show"
     >
-<!--
-    <ImageButton
-        android:id="@+id/button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_gravity="top"
-        android:layout_marginLeft="10dp"
-        android:background="@null"
-        android:onClick="refresh"
-        android:scaleType="centerCrop"
-        android:src="@drawable/click_button" />-->
 
     <com.tmall.ultraviewpager.UltraViewPager
         android:id="@+id/ultra_viewpager"

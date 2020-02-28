@@ -17,11 +17,22 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
-public class SampleProduct {
+/**
+ * 웹서버로부터 상품 정보 가져오기
+ */
 
+public class SampleProduct {
+    /**
+     * 상품정보리스트
+     */
     ArrayList<Product> sampleProductArray = new ArrayList<>();
 
     public void request(String urlStr, Context context){
+        /**
+         * 웹서버에서 상품 정보 json 읽어와 상품 정보 업데이트
+         * @param urlStr 웹서버 접속 url
+         * @param context
+         */
         String output = "";
         try{
             URL url = new URL(urlStr);
@@ -70,13 +81,22 @@ public class SampleProduct {
         }
     }
 
-    public ArrayList<Product> getDemoProduct(SampleScenario scenario, Context context){ //웹서버로부터 상품정보 가져오기
+    /**
+     * 웹서버로부터 상품정보 가져오기
+     * @param scenario 시나리오
+     * @param context
+     * @return
+     */
+    public ArrayList<Product> getDemoProduct(SampleScenario scenario, Context context){
 
         sampleProductArray.clear();
         scenario.getDemoScenario(context);
         ArrayList pnum = scenario.Matching();
         for(int i=0; i<pnum.size(); i++) {
 
+            /**
+             * 상품 정보 웹서버 url
+             */
             final String urlStr = String.format(context.getString(R.string.product_server), pnum.get(i),
                     context.getString(R.string.ID), context.getString(R.string.PWD));
 
@@ -97,22 +117,27 @@ public class SampleProduct {
         return sampleProductArray;
     }
 
-
+    /**
+     * 화면에 추가될 상품리스트
+     */
     private static ArrayList<ProductViewItem> watchList;
 
+    /**
+     * 화면에 추가될 상품리스트로 변환
+     * @param ProductArray 상품리스트
+     * @return 변환된 상품리스트
+     */
     public static ArrayList<ProductViewItem> getWatchList(ArrayList ProductArray) {
 
         if ( watchList != null)
             return watchList;
 
         watchList = new ArrayList<>();
-/*
-        SampleScenario sampleScenario = new SampleScenario();
-        SampleProduct sampleProduct = new SampleProduct();
-        ArrayList<Product> ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
-        Log.d("watchhhh", sampleProduct.sampleProductArray.get(0).getName());
-*/
-        for(int i=0 ; i<ProductArray.size(); i++){ // 0 아닌 숫자로 세팅된 product number 리스트
+
+        /**
+         * 0 아닌 숫자로 세팅된 product number 리스트
+         */
+        for(int i=0 ; i<ProductArray.size(); i++){
             Product demop = (Product) (ProductArray.get(i));
 
             String pname = demop.getName();

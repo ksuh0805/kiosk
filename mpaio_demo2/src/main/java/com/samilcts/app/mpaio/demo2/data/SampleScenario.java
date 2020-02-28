@@ -20,10 +20,21 @@ import java.util.ArrayList;
  */
 
 public class SampleScenario {
+    /**
+     * 상품리스트
+     */
     private ArrayList<String> ProductArray = new ArrayList<>();
 
-    public void request(String urlStr){ // 웹서버에서 시나리오 정보 json 가져오기
-        ProductArray.clear(); // 이전 시나리오 정보 초기화
+    /**
+     * 웹서버에서 시나리오 정보 json 읽어와 상품리스트 업데이트
+     * @param urlStr 웹서버 접속 url
+     */
+    public void request(String urlStr){
+
+        /**
+         * 이전 시나리오 정보 초기화
+         */
+        ProductArray.clear();
         String output = "";
         try{
             URL url = new URL(urlStr);
@@ -63,13 +74,23 @@ public class SampleScenario {
         }Log.d("plist", String.valueOf(ProductArray));
     }
 
-    public ArrayList<String> getDemoScenario(Context context){ // 시나리오 정보 가져오기
+    /**
+     * 시나리오 정보 가져오기
+     * @return 시나리오상 상품리스트
+     */
+    public ArrayList<String> getDemoScenario(Context context){
 
-        String serial = android.os.Build.SERIAL; // 기기 serial number 가져오기
+        /**
+         * 기기 serial number
+         */
+        String serial = android.os.Build.SERIAL;
         Log.d("serialnumber", serial);
 
+        /**
+         * 기기별 scenario 웹서버 url
+         */
         final String urlStr = String.format(context.getString(R.string.scenario_server), serial,
-                context.getString(R.string.ID), context.getString(R.string.PWD)); //  기기별 scenario 웹서버 url
+                context.getString(R.string.ID), context.getString(R.string.PWD));
 
         Log.d("url", urlStr);
 
@@ -88,7 +109,12 @@ public class SampleScenario {
         }
         return ProductArray;
     }
-    public ArrayList Matching() { // scenario 내 유효한 상품번호만 가져오기
+
+    /**
+     * scenario 내 유효한 상품번호만 가져오기
+     * @return 유효한(매칭된) 상품리스트
+     */
+    public ArrayList Matching() {
         ArrayList<Integer> productNum = new ArrayList<>();
 
         for (int i = 0; i < ProductArray.size(); i++) {

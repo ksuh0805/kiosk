@@ -91,7 +91,7 @@ public class BuyActivity extends MpaioBaseActivity {
 
         AppTool.localPath = getFilesDir().getPath();
         Intent intent = getIntent();
-        productList = (ArrayList<Product>) intent.getSerializableExtra("productlist");
+        productList = (ArrayList<Product>) intent.getSerializableExtra("productlist"); // Showactivity로부터 상품리스트를 받음
 
         Preference preference = Preference.getInstance(getApplicationContext());
 

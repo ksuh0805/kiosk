@@ -28,22 +28,40 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * 웹서버로부터 시니리오를 받아 메인화면에 상품목록을 보여줌 <br>
+ * viewpager를 사용한 오픈소스를 사용하여 자동 스크롤
+ */
+
 public class ShowActivity extends MpaioBaseActivity {
 
     Context context = this;
+    /**
+     * 상품리스트를 자동으로 보여줄 viewpager
+     */
     UltraViewPager ultraViewPager;
+    /**
+     * 시나리오
+     */
     private SampleScenario sampleScenario = new SampleScenario();
+    /**
+     * 시나리오로 받아온 상품
+     */
     private SampleProduct sampleProduct = new SampleProduct();
+    /**
+     * 상품리스트
+     */
     private ArrayList<Product> ProductArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getResources().getConfiguration().orientation ==
-                Configuration.ORIENTATION_PORTRAIT) {
+                Configuration.ORIENTATION_PORTRAIT) { //세로 화면
             setContentView(R.layout.activity_show);
         } else {
-            setContentView(R.layout.activity_show_landscape);
+            setContentView(R.layout.activity_show_landscape); //가로 화면
         }
 
         ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
@@ -51,23 +69,29 @@ public class ShowActivity extends MpaioBaseActivity {
 
         ultraViewPager = (UltraViewPager)findViewById(R.id.ultra_viewpager);
         ultraViewPager.setScrollMode(UltraViewPager.ScrollMode.HORIZONTAL);
-//initialize UltraPagerAdapter，and add child view to UltraViewPager
+
+        //initialize UltraPagerAdapter，and add child view to UltraViewPager
         PagerAdapter adapter = new UltraPagerAdapter(true, ProductArray);
         ultraViewPager.setAdapter(adapter);
         ultraViewPager.setMultiScreen(0.6f);
         ultraViewPager.setItemRatio(1.0f);
+
         if (getResources().getConfiguration().orientation ==
                 Configuration.ORIENTATION_PORTRAIT) {
+            /**
+             * 세로 화면 비율
+             */
             ultraViewPager.setRatio(1.6f);
         } else {
+            /**
+             * 가로 화면 비율
+             */
             ultraViewPager.setRatio(3.5f);
         }
-        //ultraViewPager.setMaxHeight(800);
-        //ultraViewPager.setAutoMeasureHeight(true);
 
-//initialize built-in indicator
+        //initialize built-in indicator
         ultraViewPager.initIndicator();
-//set style of indicators
+        //set style of indicators
         ultraViewPager.getIndicator()
                 .setOrientation(UltraViewPager.Orientation.HORIZONTAL)
                 .setFocusColor(Color.parseColor("#009688"))
@@ -75,25 +99,31 @@ public class ShowActivity extends MpaioBaseActivity {
                 .setIndicatorPadding(10)
                 .setMargin(0,0,0,10)
                 .setRadius((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6, getResources().getDisplayMetrics()));
-//set the alignment
+        //set the alignment
         ultraViewPager.getIndicator().setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
-//construct built-in indicator, and add it to  UltraViewPager
+        //construct built-in indicator, and add it to  UltraViewPager
         ultraViewPager.getIndicator().build();
         ultraViewPager.setPageTransformer(false, new UltraDepthScaleTransformer());
 
-//set an infinite loop
+        //set an infinite loop
         ultraViewPager.setInfiniteLoop(true);
-//enable auto-scroll mode
+        //enable auto-scroll mode
         ultraViewPager.setAutoScroll(5000);
+
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 Message msg = handler.obtainMessage();
                 handler.sendMessage(msg);
             }
-        }, 1800000, 1800000);
+        }, 1800000, 1800000); //30분마다 업데이트
     }
 
+    /**
+     * 화면 터치이벤트
+     * @param event 화면 터치이벤트
+     * @return buyactivity로 넘어감
+     */
     public boolean dispatchTouchEvent(MotionEvent event) {
         int action = event.getAction();
         if (action == MotionEvent.ACTION_UP) {
@@ -107,18 +137,13 @@ public class ShowActivity extends MpaioBaseActivity {
 
         return super.onTouchEvent(event);
     }
-    /*
-    public void refresh(View v){
 
-        ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
-        Log.d("wwwwatchhhh", ProductArray.get(0).getName());
-        PagerAdapter adapter = new UltraPagerAdapter(true, ProductArray);
-        ultraViewPager.setAdapter(adapter);
-    }*/
+    /**
+     * 시나리오 업데이트
+     */
     Handler handler = new Handler(){
         public void handleMessage(Message msg){
             ProductArray = sampleProduct.getDemoProduct(sampleScenario, context);
-            Log.d("wwwwatchhhh", ProductArray.get(0).getName());
             PagerAdapter adapter = new UltraPagerAdapter(true, ProductArray);
             ultraViewPager.setAdapter(adapter);
         }
